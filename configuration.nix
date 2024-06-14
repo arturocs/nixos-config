@@ -4,12 +4,12 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./unstable.nix
   ];
 
   # Bootloader.
@@ -100,61 +100,88 @@
 
   security.polkit.enable = true;
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
+  #   nixpkgs.config.packageOverrides = pkgs: {
+  #     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+  #       inherit pkgs;
+  #     };
+  #   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    firefox
-    kate
-    rustup
-    alejandra
-    python3
-    nodejs_22
-    git
-    libnotify
-    gimp
-    libgcc
-    llvmPackages.libcxxClang
-    typora
-    telegram-desktop
-    libreoffice-qt
-    hunspell
-    hunspellDicts.es_ES
-    hunspellDicts.en_US
-    onlyoffice-bin
-    gitkraken
-    blender
-    libsForQt5.skanlite
-    chromium
-    discord
-    freetube
-    qbittorrent-qt5
-    tor-browser
-    teamviewer
-    mgba
-    gnome.cheese
-    vlc
-    libsForQt5.kdenlive
-    calibre
-    libsForQt5.yakuake
-    libsForQt5.filelight
-    libsForQt5.libksysguard
-    libsForQt5.ktexteditor
-    partition-manager
-    htop
-    wineWowPackages.stable
-    ncdu
-    nur.repos.xeals.cura5
-    orca-slicer
-    vdhcoapp
-    gitkraken
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+      firefox
+      kate
+      rustup
+      alejandra
+      python3
+      nodejs_22
+      git
+      libnotify
+      gimp
+      libgcc
+      llvmPackages.libcxxClang
+      typora
+      telegram-desktop
+      libreoffice-qt
+      hunspell
+      hunspellDicts.es_ES
+      hunspellDicts.en_US
+      onlyoffice-bin
+      gitkraken
+      blender
+      libsForQt5.skanlite
+      chromium
+      discord
+      freetube
+      qbittorrent-qt5
+      tor-browser
+      teamviewer
+      mgba
+      gnome.cheese
+      vlc
+      libsForQt5.kdenlive
+      calibre
+      libsForQt5.yakuake
+      libsForQt5.filelight
+      libsForQt5.libksysguard
+      libsForQt5.ktexteditor
+      partition-manager
+      htop
+      wineWowPackages.stable
+      ncdu
+      config.nur.repos.xeals.cura5
+      orca-slicer
+      vdhcoapp
+      gitkraken
+    ])
+    ++ (with pkgs-unstable; [
+      (vscode-with-extensions.override
+        {
+          vscodeExtensions = with vscode-extensions; [
+            bbenoist.nix
+            ms-python.python
+            ms-azuretools.vscode-docker
+            ms-vscode-remote.remote-ssh
+            rust-lang.rust-analyzer
+            github.copilot
+            ms-python.vscode-pylance
+            ms-toolsai.jupyter
+            ms-toolsai.vscode-jupyter-slideshow
+            ms-pyright.pyright
+            ms-toolsai.jupyter-renderers
+            ms-toolsai.jupyter-keymap
+            eamodio.gitlens
+            ms-toolsai.vscode-jupyter-cell-tags
+            ms-ceintl.vscode-language-pack-es
+            github.copilot-chat
+            llvm-vs-code-extensions.vscode-clangd
+            tamasfe.even-better-toml
+            vadimcn.vscode-lldb
+          ];
+        })
+    ]);
   fonts.packages = with pkgs; [
     corefonts
   ];
