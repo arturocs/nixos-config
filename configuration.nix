@@ -5,11 +5,14 @@
   config,
   pkgs,
   pkgs-unstable,
+  home-manager,
+  inputs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    home-manager.nixosModules.home-manager
   ];
 
   # Bootloader.
@@ -93,6 +96,11 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
     ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users.arturo = import ./home.nix;
   };
 
   # Allow unfree packages

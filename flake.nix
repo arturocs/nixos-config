@@ -33,10 +33,9 @@
         modules = [
           ./configuration.nix
           nur.nixosModules.nur
-          home-manager.nixosModules.default
         ];
         specialArgs = {
-          inherit pkgs-unstable;
+          inherit home-manager pkgs-unstable inputs;
         };
       };
     };
