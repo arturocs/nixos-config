@@ -31,8 +31,9 @@
       nixos = lib.nixosSystem {
         inherit system;
         modules = [
+  nur.nixosModules.nur
           ./configuration.nix
-          nur.nixosModules.nur
+
         ];
         specialArgs = {
           inherit home-manager pkgs-unstable inputs;

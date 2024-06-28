@@ -13,7 +13,7 @@
 set -e
 
 # Edit your config
-sudo -u arturo kate ./configuration.nix &&
+#nano ./configuration.nix
 
 # cd to your config dir
 
@@ -33,7 +33,7 @@ alejandra . &>/dev/null \
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake . &> nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+sudo nixos-rebuild switch --flake --option eval-cache false . &> nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)

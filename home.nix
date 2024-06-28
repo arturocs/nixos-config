@@ -1,8 +1,16 @@
 {
   config,
   pkgs,
+  lib,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.nur.hmModules.nur
+  ];
+
+  #imports = [ (lib.attrValues nur.repos.rycee.firefox-addons) ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "arturo";
@@ -67,7 +75,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/arturo/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/arturo/etc/proifile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
@@ -75,4 +83,16 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.firefox = {
+    enable = true;
+    profiles.arturo.extensions = with config.nur.repos.rycee.firefox-addons; [
+        ublock-origin
+       # i-dont-care-about-cookies
+       # darkreader
+       # video-downloadhelper
+       # cookie-autodelete
+      ];
+
+  };
 }

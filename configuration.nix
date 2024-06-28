@@ -107,7 +107,6 @@
   nixpkgs.config.allowUnfree = true;
 
   security.polkit.enable = true;
-
   #   nixpkgs.config.packageOverrides = pkgs: {
   #     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
   #       inherit pkgs;
@@ -119,7 +118,7 @@
     (with pkgs; [
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
-      firefox
+     # firefox
       kate
       rustup
       alejandra
@@ -200,6 +199,8 @@
     dedicatedServer.openFirewall = true;
   };
 
+  #programs.firefox.enable = true;
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     fuse
@@ -236,7 +237,6 @@
     formatted = builtins.concatStringsSep "\n" sortedUnique;
   in
     formatted;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
