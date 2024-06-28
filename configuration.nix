@@ -118,7 +118,7 @@
     (with pkgs; [
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
-     # firefox
+      # firefox
       kate
       rustup
       alejandra
@@ -158,7 +158,6 @@
       htop
       wineWowPackages.stable
       ncdu
-      config.nur.repos.xeals.cura5
       orca-slicer
       vdhcoapp
       gitkraken
