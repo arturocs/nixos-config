@@ -80,19 +80,24 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    };
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   programs.firefox = {
     enable = true;
     profiles.arturo.extensions = with config.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-       # i-dont-care-about-cookies
-       # darkreader
-       # video-downloadhelper
-       # cookie-autodelete
-      ];
-
+      ublock-origin
+      i-dont-care-about-cookies
+      darkreader
+      video-downloadhelper
+      cookie-autodelete
+      plasma-integration
+    ];
   };
 }
