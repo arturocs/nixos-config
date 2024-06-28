@@ -118,7 +118,6 @@
     (with pkgs; [
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
-      # firefox
       kate
       rustup
       alejandra
@@ -199,6 +198,7 @@
   };
 
   #programs.firefox.enable = true;
+  programs.firefox.languagePacks = ["es-ES"];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
