@@ -98,10 +98,7 @@
     ];
   };
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users.arturo = import ./home.nix;
-  };
+  home-manager.extraSpecialArgs = {inherit inputs;};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -119,7 +116,6 @@
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
       kate
-      rustup
       alejandra
       python3
       nodejs_22
@@ -160,6 +156,8 @@
       orca-slicer
       vdhcoapp
       gitkraken
+      virtualbox
+      rust-bin.stable.latest.default
     ])
     ++ (with pkgs-unstable; [
       (vscode-with-extensions.override
@@ -211,6 +209,9 @@
   ];
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
