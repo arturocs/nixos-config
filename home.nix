@@ -9,8 +9,6 @@
     inputs.nur.hmModules.nur
   ];
 
-  #imports = [ (lib.attrValues nur.repos.rycee.firefox-addons) ];
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "arturo";
