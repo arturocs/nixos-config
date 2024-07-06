@@ -93,7 +93,7 @@
   users.users.arturo = {
     isNormalUser = true;
     description = "arturo";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "vboxusers" "docker"];
     packages = with pkgs; [
     ];
   };
@@ -104,6 +104,8 @@
   nixpkgs.config.allowUnfree = true;
 
   security.polkit.enable = true;
+
+  virtualisation.docker.enable = true;
 
   # $ nix search wget
   environment.systemPackages =
@@ -152,8 +154,22 @@
       gitkraken
       virtualbox
       rust-bin.stable.latest.default
+      pcmanfm
+      bless
+      calibre
+      aseprite
+      ghidra-bin
+      mgba
+      melonDS
+      duckstation
+      pcsx2
+      dolphin-emu
+      snes9x-gtk
+      neofetch
+      rmg
     ])
     ++ (with pkgs-unstable; [
+
       (vscode-with-extensions.override
         {
           vscodeExtensions = with vscode-extensions; [
@@ -203,7 +219,6 @@
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
