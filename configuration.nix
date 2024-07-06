@@ -167,9 +167,9 @@
       snes9x-gtk
       neofetch
       rmg
+      inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     ])
     ++ (with pkgs-unstable; [
-
       (vscode-with-extensions.override
         {
           vscodeExtensions = with vscode-extensions; [
