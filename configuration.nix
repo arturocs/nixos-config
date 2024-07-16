@@ -155,7 +155,6 @@
       pcmanfm
       neofetch
       aseprite
-      inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     ])
     ++ (with pkgs-unstable; [
       mgba

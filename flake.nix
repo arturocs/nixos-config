@@ -16,7 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
   };
 
   outputs = {
