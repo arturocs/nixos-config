@@ -118,7 +118,7 @@
       git
       libnotify
       gimp
-      libgcc
+      gcc
       llvmPackages.libcxxClang
       typora
       telegram-desktop
