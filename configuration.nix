@@ -155,6 +155,8 @@
       pcmanfm
       neofetch
       aseprite
+      distrobox
+      boxbuddy
     ])
     ++ (with pkgs-unstable; [
       mgba
