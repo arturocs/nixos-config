@@ -136,7 +136,6 @@
       qbittorrent-qt5
       tor-browser
       teamviewer
-      mgba
       gnome.cheese
       vlc
       libsForQt5.kdenlive
@@ -149,15 +148,20 @@
       htop
       wineWowPackages.stable
       ncdu
-      orca-slicer
       vdhcoapp
-      gitkraken
+      bless
       virtualbox
       rust-bin.stable.latest.default
       pcmanfm
-      bless
-      calibre
+      neofetch
       aseprite
+      inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+    ])
+    ++ (with pkgs-unstable; [
+      mgba
+      orca-slicer
+      gitkraken
+      calibre
       ghidra-bin
       mgba
       melonDS
@@ -165,11 +169,7 @@
       pcsx2
       dolphin-emu
       snes9x-gtk
-      neofetch
       rmg
-      inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
-    ])
-    ++ (with pkgs-unstable; [
       (vscode-with-extensions.override
         {
           vscodeExtensions = with vscode-extensions; [
