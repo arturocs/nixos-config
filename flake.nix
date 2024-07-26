@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+    nix-flatpak.url = "github:gmodena/nix-flatpak?ref=v0.4.1";
     autofirma-nix.url = "github:nilp0inter/autofirma-nix/release-24.05";
   };
 
