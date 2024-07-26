@@ -14,6 +14,7 @@
     ./hardware-configuration.nix
     ./rust.nix
     home-manager.nixosModules.home-manager
+    ./plasma-manager.nix
     inputs.nur.nixosModules.nur
     inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
