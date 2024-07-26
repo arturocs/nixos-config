@@ -29,7 +29,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
-    username = "arturo";
+    #username = "arturo";
     pkgs-unstable = import nixpkgs-unstable {
       system = "x86_64-linux";
       config = {
