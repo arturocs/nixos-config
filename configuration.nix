@@ -218,6 +218,12 @@
     # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages
   ];
+
+
+  services.flatpak.enable = true;
+  services.flatpak.update.auto.enable = true;
+  services.flatpak.packages = [ "com.ultimaker.cura" ];
+
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enable = true;
