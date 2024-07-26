@@ -38,7 +38,7 @@
     };
   in {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      nixos_vm = lib.nixosSystem {
         inherit system;
         modules = [
           ./hardware-configuration.nix
