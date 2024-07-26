@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
   };
 
   outputs = {
@@ -45,6 +46,7 @@
         modules = [
           nur.nixosModules.nur
           ./configuration.nix
+          inputs.nix-flatpak.nixosModules.nix-flatpak
           ({pkgs, ...}: {
             nixpkgs.overlays = [rust-overlay.overlays.default];
             environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
