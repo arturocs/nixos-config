@@ -43,8 +43,8 @@
         inherit system;
         modules = [
           ./configuration.nix
-          inputs.nur.nixosModules.nur
-          inputs.nix-flatpak.nixosModules.nix-flatpak
+
+          # ({pkgs, ...}: {
 
           ({pkgs, ...}: {
             nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
