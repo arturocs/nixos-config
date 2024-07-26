@@ -12,6 +12,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./rust.nix
     home-manager.nixosModules.home-manager
     inputs.nur.nixosModules.nur
     inputs.nix-flatpak.nixosModules.nix-flatpak
