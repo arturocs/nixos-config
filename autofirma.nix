@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  home-manager,
-  inputs,
-  ...
-}: {
+{...}: {
   programs.autofirma.enable = true;
   programs.autofirma.fixJavaCerts = true;
   programs.autofirma.firefoxIntegration.enable = true; # Para que Firefox utilice AutoFirma

@@ -29,7 +29,6 @@
   } @ inputs: let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
-    #username = "arturo";
     pkgs-unstable = import nixpkgs-unstable {
       system = "x86_64-linux";
       config = {
@@ -43,11 +42,6 @@
         inherit system;
         modules = [
           ./configuration.nix
-
-          # ({pkgs, ...}: {
-          #   nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
-          #   environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
-          # })
         ];
         specialArgs = {
           inherit home-manager pkgs-unstable inputs;

@@ -1,5 +1,4 @@
 {
-  pkgs,
   home-manager,
   inputs,
   ...
