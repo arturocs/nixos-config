@@ -18,6 +18,7 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=v0.4.1";
     autofirma-nix.url = "github:nilp0inter/autofirma-nix/release-24.05";
+    nix-software-center.url = "github:snowfallorg/nix-software-center";
   };
 
   outputs = {
