@@ -157,6 +157,7 @@
       aseprite
       distrobox
       boxbuddy
+      openfortivpn
     ])
     ++ (with pkgs-unstable; [
       mgba
