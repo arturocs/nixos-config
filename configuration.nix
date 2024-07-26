@@ -158,12 +158,12 @@
       distrobox
       boxbuddy
       openfortivpn
+      gitkraken
+      calibre
     ])
     ++ (with pkgs-unstable; [
       mgba
       orca-slicer
-      gitkraken
-      calibre
       ghidra-bin
       mgba
       melonDS
