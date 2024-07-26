@@ -10,8 +10,6 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     ./rust.nix
     home-manager.nixosModules.home-manager
     ./plasma-manager.nix
