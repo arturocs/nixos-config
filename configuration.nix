@@ -17,6 +17,8 @@
     ./plasma-manager.nix
     inputs.nur.nixosModules.nur
     inputs.nix-flatpak.nixosModules.nix-flatpak
+    inputs.autofirma-nix.nixosModules.default
+    ./autofirma.nix
   ];
 
   # Bootloader.

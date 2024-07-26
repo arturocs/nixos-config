@@ -48,18 +48,6 @@
           #   nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
           #   environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
           # })
-          inputs.autofirma-nix.nixosModules.default
-          ({
-            pkgs,
-            config,
-            ...
-          }: {
-            programs.autofirma.enable = true;
-            programs.autofirma.fixJavaCerts = true;
-            programs.autofirma.firefoxIntegration.enable = true; # Para que Firefox utilice AutoFirma
-            programs.configuradorfnmt.enable = true;
-            programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
-          })
         ];
         specialArgs = {
           inherit home-manager pkgs-unstable inputs;
