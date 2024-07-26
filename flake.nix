@@ -68,20 +68,8 @@
             programs.autofirma.enable = true;
             programs.autofirma.fixJavaCerts = true;
             programs.autofirma.firefoxIntegration.enable = true; # Para que Firefox utilice AutoFirma
-
-            #programs.dnieremote.enable = true;
-
             programs.configuradorfnmt.enable = true;
             programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
-
-            # Firefox
-            #programs.firefox.enable = true;
-            #programs.firefox.policies = {
-            #  SecurityDevices = {
-            #    "OpenSC PKCS#11" = "${pkgs.opensc}/lib/opensc-pkcs11.so"; # Para poder utilizar el DNIe, y otras tarjetas inteligentes
-            #    "DNIeRemote" = "${config.programs.dnieremote.finalPackage}/lib/libdnieremotepkcs11.so"; # Para poder utilizar el DNIe por NFC desde un móvil Android
-            #  };
-            #};
           })
         ];
         specialArgs = {
