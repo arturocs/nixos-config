@@ -22,11 +22,8 @@
   outputs = {
     self,
     nixpkgs,
-    nur,
     nixpkgs-unstable,
     home-manager,
-    rust-overlay,
-    plasma-manager,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -44,18 +41,20 @@
       nixos = lib.nixosSystem {
         inherit system;
         modules = [
-          nur.nixosModules.nur
           ./configuration.nix
+          inputs.nur.nixosModules.nur
           inputs.nix-flatpak.nixosModules.nix-flatpak
+
           ({pkgs, ...}: {
-            nixpkgs.overlays = [rust-overlay.overlays.default];
+            nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
             environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
           })
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
             home-manager.users."${username}" = import ./home.nix;
           }
         ];
