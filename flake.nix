@@ -17,6 +17,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+    autofirma-nix.url = "github:nilp0inter/autofirma-nix/release-24.05";
   };
 
   outputs = {
@@ -57,6 +58,31 @@
             home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
             home-manager.users."${username}" = import ./home.nix;
           }
+
+          inputs.autofirma-nix.nixosModules.default
+          ({
+            pkgs,
+            config,
+            ...
+          }: {
+            programs.autofirma.enable = true;
+            programs.autofirma.fixJavaCerts = true;
+            programs.autofirma.firefoxIntegration.enable = true; # Para que Firefox utilice AutoFirma
+
+            #programs.dnieremote.enable = true;
+
+            programs.configuradorfnmt.enable = true;
+            programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
+
+            # Firefox
+            #programs.firefox.enable = true;
+            #programs.firefox.policies = {
+            #  SecurityDevices = {
+            #    "OpenSC PKCS#11" = "${pkgs.opensc}/lib/opensc-pkcs11.so"; # Para poder utilizar el DNIe, y otras tarjetas inteligentes
+            #    "DNIeRemote" = "${config.programs.dnieremote.finalPackage}/lib/libdnieremotepkcs11.so"; # Para poder utilizar el DNIe por NFC desde un móvil Android
+            #  };
+            #};
+          })
         ];
         specialArgs = {
           inherit home-manager pkgs-unstable inputs;
