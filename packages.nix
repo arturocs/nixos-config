@@ -58,5 +58,6 @@
     gitkraken
     calibre
     inputs.nix-software-center.packages.${system}.nix-software-center
+    nh
   ];
 }
