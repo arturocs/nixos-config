@@ -10,7 +10,6 @@
     mgba
     orca-slicer
     ghidra-bin
-    mgba
     melonDS
     duckstation
     pcsx2
