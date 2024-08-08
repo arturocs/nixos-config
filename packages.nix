@@ -51,7 +51,6 @@
     rust-bin.stable.latest.default
     pcmanfm
     neofetch
-    aseprite
     distrobox
     boxbuddy
     openfortivpn
