@@ -10,13 +10,10 @@
   ...
 }: {
   imports = [
-    ./rust.nix
     home-manager.nixosModules.home-manager
-    ./plasma-manager.nix
     inputs.nur.nixosModules.nur
     inputs.nix-flatpak.nixosModules.nix-flatpak
     inputs.autofirma-nix.nixosModules.default
-    ./autofirma.nix
     ./packages.nix
     ./unstable_packages.nix
   ];
@@ -105,6 +102,18 @@
   };
 
   home-manager.extraSpecialArgs = {inherit inputs;};
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+  home-manager.users.arturo = import ./home.nix;
+
+  programs.autofirma.enable = true;
+  programs.autofirma.fixJavaCerts = true;
+  programs.autofirma.firefoxIntegration.enable = true; # Para que Firefox utilice AutoFirma
+  programs.configuradorfnmt.enable = true;
+  programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
+
+  nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -140,7 +149,6 @@
   services.flatpak.packages = ["com.ultimaker.cura"];
 
   services.xserver.xautolock.time = 99999;
-  virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are

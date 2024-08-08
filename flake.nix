@@ -42,8 +42,9 @@
       nixos_vm = lib.nixosSystem {
         inherit system;
         modules = [
-          ./hardware-configuration.nix
-          ./configuration.nix
+          ./nixos_vm/hardware-configuration.nix
+          ./nixos_vm/configuration.nix
+          ./general_configuration.nix
         ];
         specialArgs = {
           inherit home-manager pkgs-unstable inputs;
