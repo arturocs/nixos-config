@@ -585,7 +585,7 @@
       "khotkeysrc"."Data_3Conditions0"."Type" = "ACTIVE_WINDOW";
       "khotkeysrc"."Data_3Conditions0Window"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window"."WindowsCount" = 1;
-      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konqueror\s";
+      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konquerors";
       "khotkeysrc"."Data_3Conditions0Window0"."ClassType" = 3;
       "khotkeysrc"."Data_3Conditions0Window0"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window0"."Role" = "konqueror-mainwindow#1";
