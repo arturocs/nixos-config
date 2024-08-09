@@ -61,5 +61,8 @@
     airshipper
     postman
     squashfsTools
+    libsForQt5.kalk
+    pingus
+    minetest
   ];
 }
