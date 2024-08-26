@@ -50,6 +50,17 @@
           inherit home-manager pkgs-unstable inputs;
         };
       };
+      desktop = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./desktop/hardware-configuration.nix
+          ./desktop/configuration.nix
+          ./general_configuration.nix
+        ];
+        specialArgs = {
+          inherit home-manager pkgs-unstable inputs;
+        };
+      };
     };
   };
 }
