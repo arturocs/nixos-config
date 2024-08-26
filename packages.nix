@@ -64,5 +64,10 @@
     libsForQt5.kalk
     pingus
     minetest
+    obs-studio
+    skypeforlinux
+    teams-for-linux
+    lm_sensors
+    pciutils
   ];
 }
