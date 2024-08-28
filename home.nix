@@ -90,13 +90,18 @@
 
   programs.firefox = {
     enable = true;
-    profiles.arturo.extensions = with config.nur.repos.rycee.firefox-addons; [
-      ublock-origin
-      i-dont-care-about-cookies
-      darkreader
-      video-downloadhelper
-      cookie-autodelete
-      plasma-integration
-    ];
+    profiles.arturo = {
+      settings = {
+        "browser.translations.enable" = false;
+      };
+      extensions = with config.nur.repos.rycee.firefox-addons; [
+        ublock-origin
+        i-dont-care-about-cookies
+        darkreader
+        video-downloadhelper
+        cookie-autodelete
+        plasma-integration
+      ];
+    };
   };
 }
