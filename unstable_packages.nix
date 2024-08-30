@@ -16,6 +16,7 @@
     dolphin-emu
     snes9x-gtk
     rmg
+    heroic
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [
