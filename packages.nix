@@ -53,12 +53,10 @@
     neofetch
     distrobox
     boxbuddy
-    openfortivpn
     gitkraken
     calibre
     inputs.nix-software-center.packages.${system}.nix-software-center
     nh
-    airshipper
     postman
     squashfsTools
     libsForQt5.kalk
