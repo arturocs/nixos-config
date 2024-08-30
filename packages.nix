@@ -69,5 +69,6 @@
     teams-for-linux
     lm_sensors
     pciutils
+    iw
   ];
 }
