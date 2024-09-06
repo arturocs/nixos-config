@@ -5,12 +5,18 @@
   home-manager,
   inputs,
   ...
-}: {
+}: let
+  python3Optimized = pkgs.python3.override {
+    enableOptimizations = true;
+    reproducibleBuild = false;
+    self = python3Optimized;
+  };
+in {
   environment.systemPackages = with pkgs; [
     wget
     kate
     alejandra
-    python3
+    python3Optimized
     nodejs_22
     git
     libnotify
