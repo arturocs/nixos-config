@@ -74,5 +74,7 @@ in {
     lm_sensors
     pciutils
     iw
+    inxi
+    lshw
   ];
 }
