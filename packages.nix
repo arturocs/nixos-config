@@ -76,5 +76,6 @@ in {
     iw
     inxi
     lshw
+    docker-compose
   ];
 }
