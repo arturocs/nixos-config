@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  hardware.bluetooth.enable = true; 
+  hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
   networking.networkmanager.wifi.powersave = false;
   boot.loader.systemd-boot.enable = true;
