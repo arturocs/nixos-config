@@ -17,6 +17,8 @@
     snes9x-gtk
     rmg
     heroic
+    ollama
+    ollama-cuda
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [
