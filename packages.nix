@@ -17,7 +17,7 @@ in {
     kate
     alejandra
     python3FullOptimized
-    nodejs_22
+    nodePackages_latest.nodejs
     git
     libnotify
     gimp
