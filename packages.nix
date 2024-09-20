@@ -6,17 +6,17 @@
   inputs,
   ...
 }: let
-  python3Optimized = pkgs.python3.override {
+  python3FullOptimized = pkgs.python3Full.override {
     enableOptimizations = true;
     reproducibleBuild = false;
-    self = python3Optimized;
+    self = python3FullOptimized;
   };
 in {
   environment.systemPackages = with pkgs; [
     wget
     kate
     alejandra
-    python3Optimized
+    python3FullOptimized
     nodejs_22
     git
     libnotify
