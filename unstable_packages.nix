@@ -19,6 +19,7 @@
     heroic
     ollama
     ollama-cuda
+    godot_4
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [
