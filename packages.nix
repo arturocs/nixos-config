@@ -57,8 +57,6 @@ in {
     rust-bin.stable.latest.default
     pcmanfm
     neofetch
-    distrobox
-    boxbuddy
     gitkraken
     calibre
     inputs.nix-software-center.packages.${system}.nix-software-center
@@ -67,7 +65,6 @@ in {
     squashfsTools
     libsForQt5.kalk
     pingus
-    minetest
     obs-studio
     skypeforlinux
     teams-for-linux

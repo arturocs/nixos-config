@@ -20,6 +20,9 @@
     ollama
     ollama-cuda
     godot_4
+    distrobox
+    boxbuddy
+    minetest
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [
