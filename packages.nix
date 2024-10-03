@@ -47,7 +47,6 @@ in {
     libsForQt5.filelight
     libsForQt5.libksysguard
     libsForQt5.ktexteditor
-    partition-manager
     htop
     wineWowPackages.stable
     ncdu
