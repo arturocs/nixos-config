@@ -74,11 +74,9 @@ in {
     lshw
     docker-compose
     file
-    nvtopPackages.nvidia
     inputs.nix-alien.packages.${system}.nix-alien
     config.boot.kernelPackages.perf
     stremio
     libsForQt5.kfind
-
   ];
 }
