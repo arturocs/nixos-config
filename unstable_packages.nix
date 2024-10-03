@@ -18,7 +18,6 @@
     rmg
     heroic
     ollama
-    ollama-cuda
     godot_4
     distrobox
     boxbuddy
