@@ -19,9 +19,9 @@
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
-  environment.systemPackages = with pkgs-unstable; [
-    ollama-cuda
-    nvtopPackages.nvidia
+  environment.systemPackages = [
+    pkgs-unstable.ollama-cuda
+    pkgs.nvtopPackages.nvidia
   ];
   hardware.nvidia = {
     # Modesetting is required.
