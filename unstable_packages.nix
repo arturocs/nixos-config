@@ -22,6 +22,7 @@
     distrobox
     boxbuddy
     minetest
+    lime3ds
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [
