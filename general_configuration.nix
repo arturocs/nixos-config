@@ -144,7 +144,11 @@
   programs.partition-manager.enable = true;
   services.flatpak.enable = true;
   services.flatpak.update.auto.enable = true;
-  services.flatpak.packages = ["com.ultimaker.cura"];
+  services.flatpak.packages = [
+    "com.ultimaker.cura"
+    "com.heroicgameslauncher.hgl"
+    "io.github.lime3ds.Lime3DS"
+  ];
 
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.host.enable = true;

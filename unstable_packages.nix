@@ -16,13 +16,11 @@
     dolphin-emu
     snes9x-gtk
     rmg
-    heroic
     ollama
     godot_4
     distrobox
     boxbuddy
     minetest
-    lime3ds
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [
