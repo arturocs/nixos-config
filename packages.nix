@@ -52,7 +52,6 @@ in {
     ncdu
     vdhcoapp
     bless
-    virtualbox
     rust-bin.stable.latest.default
     pcmanfm
     neofetch

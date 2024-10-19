@@ -152,6 +152,7 @@
 
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["arturo"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
