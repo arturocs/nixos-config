@@ -76,5 +76,6 @@ in {
     inputs.nix-alien.packages.${system}.nix-alien
     config.boot.kernelPackages.perf
     libsForQt5.kfind
+    appimage-run
   ];
 }
