@@ -21,6 +21,17 @@
     distrobox
     boxbuddy
     minetest
+    retroarch-assets
+    retroarch-joypad-autoconfig
+    (retroarch.override {
+      cores = with libretro; [
+        genesis-plus-gx
+        snes9x
+        beetle-psx-hw
+        mesen
+        mgba
+      ];
+    })
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [
