@@ -149,6 +149,7 @@
     "com.ultimaker.cura"
     "com.heroicgameslauncher.hgl"
     "io.github.lime3ds.Lime3DS"
+    "io.github.shiiion.primehack"
   ];
 
   services.xserver.xautolock.time = 99999;
