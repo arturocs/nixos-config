@@ -31,6 +31,13 @@
         beetle-psx-hw
         mesen
         mgba
+        mame
+        mupen64plus
+        gambatte
+        melonds
+        ppsspp
+        pcsx2
+        dolphin
       ];
     })
     (vscode-with-extensions.override
