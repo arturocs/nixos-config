@@ -23,6 +23,7 @@
     minetest
     retroarch-assets
     retroarch-joypad-autoconfig
+    mame-tools
     (retroarch.override {
       cores = with libretro; [
         genesis-plus-gx
