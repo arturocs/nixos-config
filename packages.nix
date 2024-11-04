@@ -77,5 +77,6 @@ in {
     config.boot.kernelPackages.perf
     libsForQt5.kfind
     appimage-run
+    lz4
   ];
 }

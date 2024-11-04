@@ -20,6 +20,13 @@
     fsType = "ext4";
   };
 
+  fileSystems."/nix" = {
+     device = "/dev/sda2";
+     fsType = "bcachefs";
+     neededForBoot = true;
+     options = [ "noatime" ];
+   };
+
   swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
