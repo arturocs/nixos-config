@@ -36,7 +36,6 @@ in {
     chromium
     discord
     freetube
-    qbittorrent-qt5
     tor-browser
     teamviewer
     gnome.cheese

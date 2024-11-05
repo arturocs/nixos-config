@@ -25,6 +25,7 @@
     retroarch-joypad-autoconfig
     mame-tools
     nixd
+    qbittorrent
     (retroarch.override {
       cores = with libretro; [
         genesis-plus-gx
