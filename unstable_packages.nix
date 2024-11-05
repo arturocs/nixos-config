@@ -24,6 +24,7 @@
     retroarch-assets
     retroarch-joypad-autoconfig
     mame-tools
+    nixd
     (retroarch.override {
       cores = with libretro; [
         genesis-plus-gx
