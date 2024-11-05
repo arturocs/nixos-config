@@ -21,11 +21,11 @@
   };
 
   fileSystems."/nix" = {
-     device = "/dev/sda2";
-     fsType = "bcachefs";
-     neededForBoot = true;
-     options = [ "noatime" ];
-   };
+    device = "/dev/sda2";
+    fsType = "bcachefs";
+    neededForBoot = true;
+    options = ["noatime" "background_compression=zstd:15"];
+  };
 
   swapDevices = [];
 
