@@ -16,7 +16,6 @@
     dolphin-emu
     snes9x-gtk
     rmg
-    ollama
     godot_4
     distrobox
     boxbuddy

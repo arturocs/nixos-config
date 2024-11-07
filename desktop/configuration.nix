@@ -20,7 +20,6 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
   environment.systemPackages = [
-    pkgs-unstable.ollama-cuda
     pkgs.nvtopPackages.nvidia
   ];
   hardware.nvidia = {
