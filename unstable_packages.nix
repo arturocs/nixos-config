@@ -25,6 +25,7 @@
     mame-tools
     nixd
     qbittorrent
+    bcachefs-tools
     (retroarch.override {
       cores = with libretro; [
         genesis-plus-gx
