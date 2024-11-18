@@ -40,6 +40,8 @@
         ppsspp
         pcsx2
         dolphin
+        fbneo
+        parallel-n64
       ];
     })
     (vscode-with-extensions.override
