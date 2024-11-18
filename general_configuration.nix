@@ -19,6 +19,7 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.tmp.cleanOnBoot = true;
   hardware.enableAllFirmware = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
