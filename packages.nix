@@ -19,7 +19,6 @@ in {
     python3FullOptimized
     nodePackages_latest.nodejs
     git
-    libnotify
     gimp
     gcc
     llvmPackages.libcxxClang
