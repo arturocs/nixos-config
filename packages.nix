@@ -76,5 +76,6 @@ in {
     libsForQt5.kfind
     appimage-run
     lz4
+    p7zip
   ];
 }
