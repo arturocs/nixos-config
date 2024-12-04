@@ -26,24 +26,25 @@
     nixd
     qbittorrent
     bcachefs-tools
-    (retroarch.override {
-      cores = with libretro; [
-        genesis-plus-gx
-        snes9x
-        beetle-psx-hw
-        mesen
-        mgba
-        mame
-        mupen64plus
-        gambatte
-        melonds
-        ppsspp
-        pcsx2
-        dolphin
+    (retroarch.withCores (
+      cores:
+        with libretro; [
+          genesis-plus-gx
+          snes9x
+          beetle-psx-hw
+          mesen
+          mame
+          mgba
+          mupen64plus
+          gambatte
+          melonds
+          ppsspp
+          pcsx2
+          dolphin
         fbneo
         parallel-n64
-      ];
-    })
+        ]
+    ))
     (vscode-with-extensions.override
       {
         vscodeExtensions = with vscode-extensions; [

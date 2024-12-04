@@ -38,7 +38,7 @@ in {
     freetube
     tor-browser
     teamviewer
-    gnome.cheese
+    cheese
     vlc
     libsForQt5.kdenlive
     calibre
@@ -50,7 +50,7 @@ in {
     wineWowPackages.stable
     ncdu
     vdhcoapp
-    bless
+    ghex
     rust-bin.stable.latest.default
     pcmanfm
     neofetch
