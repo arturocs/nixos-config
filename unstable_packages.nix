@@ -61,7 +61,6 @@
           github.copilot-chat
           llvm-vs-code-extensions.vscode-clangd
           tamasfe.even-better-toml
-          vadimcn.vscode-lldb
         ];
       })
   ];
