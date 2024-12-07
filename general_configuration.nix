@@ -10,8 +10,8 @@
   ...
 }: {
   imports = [
+    inputs.nur.modules.nixos.default
     home-manager.nixosModules.home-manager
-    inputs.nur.nixosModules.nur
     inputs.nix-flatpak.nixosModules.nix-flatpak
     inputs.autofirma-nix.nixosModules.default
     ./packages.nix

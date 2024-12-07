@@ -16,7 +16,11 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = github:nix-community/NUR;
+    flake-utils.url = "github:numtide/flake-utils";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
