@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./plasma_config.nix
   ];

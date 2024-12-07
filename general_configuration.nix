@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   home-manager,
   inputs,
   ...

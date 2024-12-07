@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  pkgs-unstable,
-  home-manager,
-  inputs,
-  ...
-}: {
+{pkgs-unstable, ...}: {
   environment.systemPackages = with pkgs-unstable; [
     orca-slicer
     ghidra-bin
