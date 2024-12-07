@@ -7,15 +7,11 @@
   ...
 }: {
   environment.systemPackages = with pkgs-unstable; [
-    mgba
     orca-slicer
     ghidra-bin
     melonDS
-    duckstation
     pcsx2
     dolphin-emu
-    snes9x-gtk
-    rmg
     godot_4
     distrobox
     boxbuddy
@@ -35,7 +31,6 @@
           mesen
           mame
           mgba
-          mupen64plus
           gambatte
           melonds
           ppsspp
