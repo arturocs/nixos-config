@@ -16,7 +16,11 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = github:nix-community/NUR;
+    flake-utils.url = "github:numtide/flake-utils";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +30,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak?ref=v0.4.1";
+    nix-flatpak.url = "github:gmodena/nix-flatpak?ref=v0.5.1";
     autofirma-nix.url = "github:nilp0inter/autofirma-nix/release-24.05";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nix-alien.url = "github:thiagokokada/nix-alien";

@@ -1,12 +1,5 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    inputs.nur.hmModules.nur
     ./plasma_config.nix
   ];
 
@@ -103,7 +96,7 @@
       settings = {
         "browser.translations.enable" = false;
       };
-      extensions = with config.nur.repos.rycee.firefox-addons; [
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
         i-dont-care-about-cookies
         darkreader

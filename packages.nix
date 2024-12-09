@@ -1,25 +1,19 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
-  home-manager,
   inputs,
   ...
-}: let
-  python3FullOptimized = pkgs.python3Full.override {
-    enableOptimizations = true;
-    reproducibleBuild = false;
-    self = python3FullOptimized;
-  };
-in {
+}: {
   environment.systemPackages = with pkgs; [
     wget
     kate
     alejandra
-    python3FullOptimized
+    (python3Full.override {
+      enableOptimizations = true;
+      reproducibleBuild = false;
+    })
     nodePackages_latest.nodejs
     git
-    libnotify
     gimp
     gcc
     llvmPackages.libcxxClang
@@ -77,5 +71,6 @@ in {
     libsForQt5.kfind
     appimage-run
     lz4
+    p7zip
   ];
 }
