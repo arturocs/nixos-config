@@ -145,6 +145,7 @@
     "com.heroicgameslauncher.hgl"
     "io.github.lime3ds.Lime3DS"
     "io.github.shiiion.primehack"
+    "org.jdownloader.JDownloader"
   ];
 
   services.xserver.xautolock.time = 99999;
