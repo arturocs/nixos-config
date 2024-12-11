@@ -50,6 +50,9 @@
       config = {
         allowUnfree = true;
         allowUnfreePredicate = _: true;
+        permittedInsecurePackages = [
+          "freeimage-unstable-2021-11-01"
+        ];
       };
     };
   in {

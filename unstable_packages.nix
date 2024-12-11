@@ -15,6 +15,7 @@
     nixd
     qbittorrent
     bcachefs-tools
+    emulationstation-de
     (retroarch.withCores (
       cores:
         with libretro; [
