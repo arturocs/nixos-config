@@ -13,10 +13,6 @@
   networking.hostName = "nixos"; # Define your hostname.
   # Enable OpenGL
   hardware.graphics.enable = true;
-  environment.shellAliases = {
-    update = "cd /home/arturo/nixos-config && nix flake update && nh os switch -H desktop .";
-    rebuild = "cd /home/arturo/nixos-config && nh os switch -H desktop .";
-  };
 
   nixpkgs.config.nvidia.acceptLicense = true;
   # Load nvidia driver for Xorg and Wayland
