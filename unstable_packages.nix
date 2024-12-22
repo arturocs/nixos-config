@@ -17,6 +17,7 @@
     bcachefs-tools
     emulationstation-de
     freetube
+    stremio
     (retroarch.withCores (
       cores:
         with libretro; [
