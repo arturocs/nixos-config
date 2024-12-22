@@ -92,6 +92,7 @@
 
   programs.firefox = {
     enable = true;
+    nativeMessagingHosts = [ pkgs.vdhcoapp ];
     profiles.arturo = {
       settings = {
         "browser.translations.enable" = false;
