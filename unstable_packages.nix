@@ -16,6 +16,7 @@
     qbittorrent
     bcachefs-tools
     emulationstation-de
+    freetube
     (retroarch.withCores (
       cores:
         with libretro; [

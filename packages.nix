@@ -29,7 +29,6 @@
     libsForQt5.skanlite
     chromium
     discord
-    freetube
     tor-browser
     teamviewer
     cheese
