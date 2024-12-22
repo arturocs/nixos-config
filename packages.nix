@@ -72,5 +72,6 @@
     appimage-run
     lz4
     p7zip
+    thunderbird
   ];
 }
