@@ -12,7 +12,7 @@
   boot.tmp.useTmpfs = true;
   networking.hostName = "desktop"; # Define your hostname.
   #networking.networkmanager.wifi.backend = "iwd";
-  boot.kernelParams = [ "iwlmvm.power_scheme=1" ];
+  boot.kernelParams = ["iwlmvm.power_scheme=1"];
   # Enable OpenGL
   hardware.graphics.enable = true;
 
