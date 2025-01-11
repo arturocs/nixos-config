@@ -17,6 +17,7 @@
     emulationstation-de
     freetube
     stremio
+    r2modman
     (retroarch.withCores (
       cores:
         with libretro; [
