@@ -30,7 +30,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak?ref=v0.5.1";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
     autofirma-nix.url = "github:nilp0inter/autofirma-nix/release-24.05";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nix-alien.url = "github:thiagokokada/nix-alien";
