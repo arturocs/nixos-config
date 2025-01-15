@@ -12,7 +12,8 @@
       enableOptimizations = true;
       reproducibleBuild = false;
     })
-    nodePackages_latest.nodejs
+    #nodePackages_latest.nodejs
+    nodejs
     git
     gimp
     gcc
