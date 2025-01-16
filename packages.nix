@@ -57,7 +57,6 @@
     libsForQt5.kalk
     pingus
     obs-studio
-    skypeforlinux
     teams-for-linux
     lm_sensors
     pciutils
