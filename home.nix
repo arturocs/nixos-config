@@ -69,7 +69,7 @@
   #
   #  /etc/profiles/per-user/arturo/etc/proifile.d/hm-session-vars.sh
   #
-
+  home.sessionPath = ["$HOME/.cargo/bin"];
   programs.bash.enable = true;
   programs.bash.historyFileSize = -1;
   programs.bash.historySize = -1;
