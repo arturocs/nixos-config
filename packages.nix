@@ -40,6 +40,7 @@
     libsForQt5.filelight
     libsForQt5.libksysguard
     libsForQt5.ktexteditor
+    libsForQt5.kio-admin
     htop
     wineWowPackages.stable
     ncdu
