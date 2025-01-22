@@ -27,19 +27,21 @@
     onlyoffice-bin
     gitkraken
     blender
-    libsForQt5.skanlite
     chromium
     discord
     tor-browser
     teamviewer
     cheese
     vlc
+    libsForQt5.skanlite
     libsForQt5.kdenlive
     libsForQt5.yakuake
     libsForQt5.filelight
     libsForQt5.libksysguard
     libsForQt5.ktexteditor
     libsForQt5.kio-admin
+    libsForQt5.kalk
+    libsForQt5.kfind
     htop
     wineWowPackages.stable
     ncdu
@@ -54,7 +56,6 @@
     nh
     postman
     squashfsTools
-    libsForQt5.kalk
     pingus
     obs-studio
     teams-for-linux
@@ -67,7 +68,6 @@
     file
     inputs.nix-alien.packages.${system}.nix-alien
     config.boot.kernelPackages.perf
-    libsForQt5.kfind
     appimage-run
     lz4
     p7zip
