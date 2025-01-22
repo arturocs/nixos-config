@@ -35,7 +35,6 @@
     cheese
     vlc
     libsForQt5.kdenlive
-    calibre
     libsForQt5.yakuake
     libsForQt5.filelight
     libsForQt5.libksysguard
