@@ -146,6 +146,7 @@
     "io.github.lime3ds.Lime3DS"
     "io.github.shiiion.primehack"
     "org.jdownloader.JDownloader"
+    "io.dbeaver.DBeaverCommunity"
   ];
 
   services.xserver.xautolock.time = 99999;
