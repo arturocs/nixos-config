@@ -72,5 +72,6 @@
     p7zip
     thunderbird
     orca-slicer
+    lsof
   ];
 }
