@@ -32,15 +32,15 @@
     teamviewer
     cheese
     vlc
-    libsForQt5.skanlite
-    libsForQt5.kdenlive
-    libsForQt5.yakuake
-    libsForQt5.filelight
-    libsForQt5.libksysguard
-    libsForQt5.ktexteditor
-    libsForQt5.kio-admin
-    libsForQt5.kalk
-    libsForQt5.kfind
+    kdePackages.skanlite
+    kdePackages.kdenlive
+    kdePackages.yakuake
+    kdePackages.filelight
+    #libsForQt5.libksysguard
+    #libsForQt5.ktexteditor
+    #libsForQt5.kio-admin
+    kdePackages.kalk
+    kdePackages.kfind
     htop
     wineWowPackages.stable
     ncdu
