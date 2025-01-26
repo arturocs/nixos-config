@@ -96,6 +96,7 @@
     profiles.arturo = {
       settings = {
         "browser.translations.enable" = false;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
