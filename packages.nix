@@ -35,9 +35,6 @@
     kdePackages.kdenlive
     kdePackages.yakuake
     kdePackages.filelight
-    #libsForQt5.libksysguard
-    #libsForQt5.ktexteditor
-    #libsForQt5.kio-admin
     kdePackages.kalk
     kdePackages.kfind
     htop
