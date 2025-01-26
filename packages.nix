@@ -32,7 +32,6 @@
     teamviewer
     cheese
     vlc
-    kdePackages.skanlite
     kdePackages.kdenlive
     kdePackages.yakuake
     kdePackages.filelight
