@@ -49,6 +49,10 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+  systemd.services.ModemManager.enable = false;
+  systemd.services.upower.enable = false;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
@@ -61,7 +65,6 @@
     discover
     elisa
   ];
-
 
   # Configure keymap in X11
   services.xserver.xkb = {
