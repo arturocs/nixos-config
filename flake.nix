@@ -34,6 +34,7 @@
     autofirma-nix.url = "github:nix-community/autofirma-nix/release-24.11";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nix-alien.url = "github:thiagokokada/nix-alien";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = {
@@ -45,6 +46,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
+    extensions = inputs.nix-vscode-extensions.extensions.${system};
     pkgs-unstable = import nixpkgs-unstable {
       system = "x86_64-linux";
       config = {
@@ -65,7 +67,7 @@
           ./general_configuration.nix
         ];
         specialArgs = {
-          inherit home-manager pkgs-unstable inputs;
+          inherit home-manager pkgs-unstable inputs extensions;
         };
       };
       desktop = lib.nixosSystem {
@@ -76,7 +78,7 @@
           ./general_configuration.nix
         ];
         specialArgs = {
-          inherit home-manager pkgs-unstable inputs;
+          inherit home-manager pkgs-unstable inputs extensions;
         };
       };
     };
