@@ -69,5 +69,6 @@
     thunderbird
     orca-slicer
     lsof
+    zip
   ];
 }
