@@ -151,7 +151,6 @@
   services.flatpak.packages = [
     "com.ultimaker.cura"
     "com.heroicgameslauncher.hgl"
-    "io.github.lime3ds.Lime3DS"
     "io.github.shiiion.primehack"
     "org.jdownloader.JDownloader"
     "io.dbeaver.DBeaverCommunity"
@@ -186,6 +185,7 @@
   environment.shellAliases = {
     update = "pushd /home/arturo/nixos-config ; nix flake update ; nh os switch -H $HOSTNAME . ; popd";
     rebuild = "pushd /home/arturo/nixos-config ; nh os switch -H $HOSTNAME . ; popd";
+    edconf = "code /home/arturo/nixos-config";
   };
 
   environment.etc."current-system-packages".text = let
