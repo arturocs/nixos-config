@@ -48,7 +48,6 @@
             ms-python.python
             ms-azuretools.vscode-docker
             ms-vscode-remote.remote-ssh
-            rust-lang.rust-analyzer
             github.copilot
             ms-python.vscode-pylance
             ms-toolsai.jupyter
@@ -65,6 +64,7 @@
           ])
           ++ (with extensions.vscode-marketplace; [
             ms-python.autopep8
+            rust-lang.rust-analyzer
           ]);
       })
   ];
