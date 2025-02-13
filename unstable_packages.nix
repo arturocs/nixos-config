@@ -1,5 +1,6 @@
 {
   pkgs-unstable,
+  pkgs,
   extensions,
   ...
 }: {
@@ -18,7 +19,7 @@
     nixd
     qbittorrent
     bcachefs-tools
-    emulationstation-de
+    (emulationstation-de.override { libgit2 = pkgs.libgit2;})
     freetube
     stremio
     r2modman
