@@ -70,5 +70,6 @@
     orca-slicer
     lsof
     zip
+    frozen-bubble
   ];
 }
