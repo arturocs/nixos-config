@@ -70,6 +70,7 @@
     orca-slicer
     lsof
     zip
+    github-desktop
     frozen-bubble
   ];
 }
