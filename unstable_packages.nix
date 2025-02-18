@@ -23,6 +23,7 @@
     freetube
     stremio
     r2modman
+    airshipper
     (retroarch.withCores (
       cores:
         with libretro; [
