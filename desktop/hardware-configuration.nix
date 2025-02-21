@@ -34,17 +34,17 @@
     options = ["nosuid" "nodev" "uid=1000" "gid=100" "iocharset=utf8" "uhelper=udisks2"];
   };
 
-  fileSystems."/home/arturo/.var/app/io.github.shiiion.primehack/data/dolphin-emu/Load/Textures/Metroid Prime 1 HD" = {
+  fileSystems."/home/arturo/.local/share/dolphin-emu/Load/Textures/Metroid Prime 1 HD" = {
     device = "/hdd/ROMS/Dolphin textures/Metroid_Prime_1.sfs";
     fsType = "squashfs";
   };
 
-  fileSystems."/home/arturo/.var/app/io.github.shiiion.primehack/data/dolphin-emu/Load/Textures/Metroid Prime 2 HD" = {
+  fileSystems."/home/arturo/.local/share/dolphin-emu/Load/Textures/Metroid Prime 2 HD" = {
     device = "/hdd/ROMS/Dolphin textures/Metroid_Prime_2.sfs";
     fsType = "squashfs";
   };
 
-  fileSystems."/home/arturo/.var/app/io.github.shiiion.primehack/data/dolphin-emu/Load/Textures/Metroid Prime 3 HD" = {
+  fileSystems."/home/arturo/.local/share/dolphin-emu/Load/Textures/Metroid Prime 3 HD" = {
     device = "/hdd/ROMS/Dolphin textures/Metroid_Prime_3.sfs";
     fsType = "squashfs";
   };

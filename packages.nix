@@ -74,5 +74,6 @@
     zip
     github-desktop
     frozen-bubble
+    dolphin-emu-primehack
   ];
 }

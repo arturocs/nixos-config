@@ -151,7 +151,6 @@
   services.flatpak.packages = [
     "com.ultimaker.cura"
     "com.heroicgameslauncher.hgl"
-    "io.github.shiiion.primehack"
     "org.jdownloader.JDownloader"
     "io.dbeaver.DBeaverCommunity"
   ];
