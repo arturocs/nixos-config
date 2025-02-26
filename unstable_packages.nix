@@ -24,6 +24,7 @@
     stremio
     r2modman
     airshipper
+    cura-appimage
     (retroarch.withCores (
       cores:
         with libretro; [

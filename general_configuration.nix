@@ -149,7 +149,6 @@
   services.flatpak.enable = true;
   services.flatpak.update.auto.enable = true;
   services.flatpak.packages = [
-    "com.ultimaker.cura"
     "com.heroicgameslauncher.hgl"
     "org.jdownloader.JDownloader"
     "io.dbeaver.DBeaverCommunity"
