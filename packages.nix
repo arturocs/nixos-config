@@ -41,7 +41,6 @@
     wineWowPackages.stable
     ncdu
     vdhcoapp
-    ghex
     (rust-bin.stable.latest.default.override {
       extensions = ["rust-src"];
     })

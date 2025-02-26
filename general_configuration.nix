@@ -152,6 +152,7 @@
     "com.heroicgameslauncher.hgl"
     "org.jdownloader.JDownloader"
     "io.dbeaver.DBeaverCommunity"
+    "com.github.afrantzis.Bless"
   ];
 
   services.xserver.xautolock.time = 99999;
