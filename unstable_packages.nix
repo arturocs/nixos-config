@@ -19,7 +19,10 @@
     nixd
     qbittorrent
     bcachefs-tools
-    (emulationstation-de.override {libgit2 = pkgs.libgit2;})
+    (emulationstation-de.override {
+      libgit2 = pkgs.libgit2;
+      icu = pkgs.icu;
+    })
     freetube
     stremio
     r2modman
