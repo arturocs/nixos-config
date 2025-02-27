@@ -67,6 +67,7 @@
             github.copilot-chat
             llvm-vs-code-extensions.vscode-clangd
             tamasfe.even-better-toml
+            batisteo.vscode-django
           ])
           ++ (with extensions.vscode-marketplace; [
             ms-python.autopep8
