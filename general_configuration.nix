@@ -78,6 +78,11 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # EarlyOOM
+  services.systembus-notify.enable = true;
+  services.earlyoom.enable = true;
+  services.earlyoom.enableNotifications = true;
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
