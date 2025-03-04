@@ -72,6 +72,7 @@
           ++ (with extensions.vscode-marketplace; [
             ms-python.autopep8
             rust-lang.rust-analyzer
+            svelte.svelte-vscode
           ]);
       })
   ];
