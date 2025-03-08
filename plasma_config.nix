@@ -2,7 +2,7 @@
   programs.plasma = {
     enable = true;
     shortcuts = {
-      "ActivityManager"."switch-to-activity-bd92301f-1c92-41c0-a791-f97d80b539be" = [ ];
+      "ActivityManager"."switch-to-activity-bd92301f-1c92-41c0-a791-f97d80b539be" = [];
       "ActivityManager"."switch-to-activity-f7913d34-39ed-4da8-bb4e-b7c3132f4af5" = "none";
       "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = "Meta+Alt+L";
       "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "Meta+Alt+K";
@@ -252,7 +252,7 @@
       "plasmashell"."switch to previous activity" = "none";
       "plasmashell"."toggle do not disturb" = "none";
       "services/org.kde.plasma-systemmonitor.desktop"."_launch" = "Ctrl+Esc";
-      "services/org.kde.spectacle.desktop"."RecordWindow" = [ ];
+      "services/org.kde.spectacle.desktop"."RecordWindow" = [];
       "services/org.kde.spectacle.desktop"."_launch" = "Print";
       "systemsettings.desktop"."_launch" = "Tools";
       "systemsettings.desktop"."kcm-kscreen" = "none";
