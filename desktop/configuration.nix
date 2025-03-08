@@ -11,6 +11,7 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.tmp.useTmpfs = true;
+  boot.tmp.tmpfsSize = "75%";
   networking.hostName = "desktop"; # Define your hostname.
   #networking.networkmanager.wifi.backend = "iwd";
   boot.kernelParams = ["iwlmvm.power_scheme=1"];
@@ -51,6 +52,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = pkgs-unstable.linuxKernel.packages.linux_6_13.nvidia_x11;
+    #package = pkgs-unstable.linuxKernel.packages.linux_6_13.nvidia_x11;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 }
