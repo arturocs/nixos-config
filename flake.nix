@@ -50,7 +50,7 @@
     lib = nixpkgs.lib;
     extensions = inputs.nix-vscode-extensions.extensions.${system};
     pkgs-unstable = import nixpkgs-unstable {
-      system = "x86_64-linux";
+      inherit system;
       config = {
         allowUnfree = true;
         allowUnfreePredicate = _: true;
