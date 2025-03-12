@@ -74,5 +74,6 @@
     github-desktop
     frozen-bubble
     dolphin-emu-primehack
+    mold
   ];
 }

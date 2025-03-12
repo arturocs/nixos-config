@@ -6,6 +6,7 @@
   pkgs,
   home-manager,
   inputs,
+  nixpkgs-unstable,
   ...
 }: {
   imports = [
@@ -123,7 +124,19 @@
   programs.configuradorfnmt.enable = true;
   programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
 
-  nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
+  nixpkgs.overlays = [
+    inputs.rust-overlay.overlays.default
+    (self: super: {
+      # try again in 25.04 https://github.com/NixOS/nixpkgs/issues/372679
+      # stdenv = (super.withCFlags ["-O3" "-flto"] super.stdenv) // {
+      stdenv =
+        super.stdenv
+        // {
+          useMoldLinker = true;
+          impureUseNativeOptimizations = true;
+        };
+    })
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
