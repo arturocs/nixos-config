@@ -12,11 +12,9 @@
     godot_4
     distrobox
     boxbuddy
-    minetest
     retroarch-assets
     retroarch-joypad-autoconfig
     mame-tools
-    nixd
     qbittorrent
     bcachefs-tools
     (emulationstation-de.override {
@@ -25,8 +23,6 @@
     })
     freetube
     stremio
-    r2modman
-    airshipper
     cura-appimage
     (retroarch.withCores (
       cores:

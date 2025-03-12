@@ -30,7 +30,6 @@
     discord
     tor-browser
     teamviewer
-    cheese
     vlc
     kdePackages.kdenlive
     kdePackages.yakuake
@@ -71,8 +70,6 @@
     orca-slicer
     lsof
     zip
-    github-desktop
-    frozen-bubble
     dolphin-emu-primehack
     mold
   ];
