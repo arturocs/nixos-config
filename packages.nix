@@ -67,7 +67,6 @@
     lz4
     p7zip
     thunderbird
-    orca-slicer
     lsof
     zip
     dolphin-emu-primehack

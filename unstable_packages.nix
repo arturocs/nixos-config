@@ -24,6 +24,7 @@
     freetube
     stremio
     cura-appimage
+    orca-slicer
     (retroarch.withCores (
       cores:
         with libretro; [
