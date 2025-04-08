@@ -25,6 +25,7 @@
     stremio
     cura-appimage
     orca-slicer
+    llama-cpp
     (retroarch.withCores (
       cores:
         with libretro; [
