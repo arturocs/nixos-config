@@ -52,7 +52,6 @@
             ms-python.python
             ms-azuretools.vscode-docker
             ms-vscode-remote.remote-ssh
-            github.copilot
             ms-python.vscode-pylance
             ms-toolsai.jupyter
             ms-toolsai.vscode-jupyter-slideshow
@@ -62,15 +61,16 @@
             eamodio.gitlens
             ms-toolsai.vscode-jupyter-cell-tags
             ms-ceintl.vscode-language-pack-es
-            github.copilot-chat
             llvm-vs-code-extensions.vscode-clangd
             tamasfe.even-better-toml
             batisteo.vscode-django
           ])
-          ++ (with extensions.vscode-marketplace; [
+          ++ (with vscode-marketplace; [
             ms-python.autopep8
             rust-lang.rust-analyzer
             svelte.svelte-vscode
+            github.copilot
+            github.copilot-chat
           ]);
       })
   ];

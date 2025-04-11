@@ -48,7 +48,6 @@
   } @ inputs: let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
-    extensions = inputs.nix-vscode-extensions.extensions.${system};
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       config = {
@@ -58,6 +57,7 @@
           "freeimage-3.18.0-unstable-2024-04-18"
         ];
       };
+      overlays = [inputs.nix-vscode-extensions.overlays.default];
     };
   in {
     nixosConfigurations = {
@@ -72,7 +72,7 @@
           chaotic.nixosModules.nyx-registry
         ];
         specialArgs = {
-          inherit home-manager pkgs-unstable inputs extensions;
+          inherit home-manager pkgs-unstable inputs;
         };
       };
       desktop = lib.nixosSystem {
@@ -86,7 +86,7 @@
           chaotic.nixosModules.nyx-registry
         ];
         specialArgs = {
-          inherit home-manager pkgs-unstable inputs extensions;
+          inherit home-manager pkgs-unstable inputs;
         };
       };
     };
