@@ -67,10 +67,12 @@
           ])
           ++ (with vscode-marketplace; [
             ms-python.autopep8
-            rust-lang.rust-analyzer
             svelte.svelte-vscode
+          ])
+          ++ (with vscode-marketplace-release; [
             github.copilot
             github.copilot-chat
+            rust-lang.rust-analyzer
           ]);
       })
   ];
