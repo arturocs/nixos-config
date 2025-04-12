@@ -17,10 +17,7 @@
     mame-tools
     qbittorrent
     bcachefs-tools
-    (emulationstation-de.override {
-      libgit2 = pkgs.libgit2;
-      icu = pkgs.icu;
-    })
+    emulationstation-de
     freetube
     stremio
     cura-appimage
