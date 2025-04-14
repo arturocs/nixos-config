@@ -71,5 +71,6 @@
     zip
     dolphin-emu-primehack
     mold
+    unrar
   ];
 }
