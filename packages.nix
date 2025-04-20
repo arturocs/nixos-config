@@ -29,7 +29,6 @@
     chromium
     discord
     tor-browser
-    teamviewer
     vlc
     kdePackages.kdenlive
     kdePackages.yakuake

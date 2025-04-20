@@ -6,7 +6,7 @@
   pkgs,
   home-manager,
   inputs,
-  nixpkgs-unstable,
+  pkgs-unstable,
   ...
 }: {
   imports = [
@@ -172,6 +172,11 @@
     "io.dbeaver.DBeaverCommunity"
     "com.github.afrantzis.Bless"
   ];
+  
+  services.teamviewer = {
+    enable = true;
+    package = pkgs-unstable.teamviewer;
+  };
 
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.host.enable = true;
