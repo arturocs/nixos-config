@@ -5,23 +5,17 @@
   ...
 }: {
   environment.systemPackages = with pkgs-unstable; [
-    ghidra-bin
     melonDS
     pcsx2
     dolphin-emu
-    godot_4
+    #godot_4
     distrobox
     boxbuddy
     retroarch-assets
     retroarch-joypad-autoconfig
-    mame-tools
-    qbittorrent
     bcachefs-tools
-    emulationstation-de
-    freetube
-    stremio
+    #emulationstation-de
     cura-appimage
-    orca-slicer
     llama-cpp
     (retroarch.withCores (
       cores:

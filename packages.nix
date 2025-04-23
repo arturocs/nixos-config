@@ -70,5 +70,11 @@
     dolphin-emu-primehack
     mold
     unrar
+    ghidra-bin
+    mame-tools
+    qbittorrent
+    freetube
+    stremio
+    orca-slicer
   ];
 }
