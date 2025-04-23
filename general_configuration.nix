@@ -124,6 +124,15 @@
   programs.configuradorfnmt.enable = true;
   programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
 
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      dates = "daily";
+      extraArgs = "--keep 3";
+    };
+  };
+
   nixpkgs.overlays = [
     inputs.rust-overlay.overlays.default
     (self: super: {
