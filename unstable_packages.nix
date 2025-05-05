@@ -55,6 +55,7 @@
             llvm-vs-code-extensions.vscode-clangd
             tamasfe.even-better-toml
             batisteo.vscode-django
+            mhutchie.git-graph
           ])
           ++ (with vscode-marketplace; [
             ms-python.autopep8
