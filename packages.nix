@@ -13,7 +13,6 @@
       reproducibleBuild = false;
     })
     nodePackages_latest.nodejs
-    git
     gimp
     gcc
     llvmPackages.libcxxClang

@@ -133,6 +133,11 @@
     };
   };
 
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
+
   nixpkgs.overlays = [
     inputs.rust-overlay.overlays.default
     (self: super: {
