@@ -75,5 +75,6 @@
     freetube
     stremio
     orca-slicer
+    mgba
   ];
 }
