@@ -8,13 +8,13 @@
     melonDS
     pcsx2
     dolphin-emu
-    #godot_4
+    godot_4
     distrobox
     boxbuddy
     retroarch-assets
     retroarch-joypad-autoconfig
     bcachefs-tools
-    #emulationstation-de
+    emulationstation-de
     cura-appimage
     llama-cpp
     (retroarch.withCores (
