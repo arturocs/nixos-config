@@ -77,5 +77,7 @@
     orca-slicer
     gittyup
     mgba
+    gh
+    nixpkgs-review
   ];
 }
