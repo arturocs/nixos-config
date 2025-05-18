@@ -8,7 +8,7 @@
     melonDS
     pcsx2
     dolphin-emu
-    godot_4
+    godot
     distrobox
     boxbuddy
     retroarch-assets
