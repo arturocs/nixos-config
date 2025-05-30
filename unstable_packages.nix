@@ -17,6 +17,7 @@
     emulationstation-de
     cura-appimage
     llama-cpp
+    postman
     (retroarch.withCores (
       cores:
         with libretro; [

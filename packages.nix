@@ -6,7 +6,6 @@
 }: {
   environment.systemPackages = with pkgs; [
     wget
-    kate
     alejandra
     (python3Full.override {
       enableOptimizations = true;
@@ -29,6 +28,7 @@
     discord
     tor-browser
     vlc
+    kdePackages.kate
     kdePackages.kdenlive
     kdePackages.yakuake
     kdePackages.filelight
@@ -46,7 +46,6 @@
     gitkraken
     calibre
     inputs.nix-software-center.packages.${system}.nix-software-center
-    postman
     squashfsTools
     pingus
     obs-studio
