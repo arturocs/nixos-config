@@ -47,7 +47,6 @@
     calibre
     inputs.nix-software-center.packages.${system}.nix-software-center
     squashfsTools
-    pingus
     obs-studio
     teams-for-linux
     lm_sensors
@@ -62,7 +61,6 @@
     appimage-run
     lz4
     p7zip
-    thunderbird
     lsof
     zip
     dolphin-emu-primehack
