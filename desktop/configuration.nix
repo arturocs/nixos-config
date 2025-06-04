@@ -17,7 +17,9 @@
   boot.kernelParams = ["iwlmvm.power_scheme=1"];
   # Enable OpenGL
   hardware.graphics.enable = true;
-
+  virtualisation.docker.enableNvidia = true;
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.daemon.settings.features.cdi = true;
   nixpkgs.config.nvidia.acceptLicense = true;
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];

@@ -77,5 +77,6 @@
     gh
     nixpkgs-review
     postman
+    nvidia-container-toolkit
   ];
 }
