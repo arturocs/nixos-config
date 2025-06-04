@@ -76,5 +76,6 @@
     mgba
     gh
     nixpkgs-review
+    postman
   ];
 }
