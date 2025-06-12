@@ -53,9 +53,6 @@
       config = {
         allowUnfree = true;
         allowUnfreePredicate = _: true;
-        permittedInsecurePackages = [
-          "freeimage-3.18.0-unstable-2024-04-18"
-        ];
       };
       overlays = [inputs.nix-vscode-extensions.overlays.default];
     };

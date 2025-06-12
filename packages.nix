@@ -78,5 +78,6 @@
     nixpkgs-review
     postman
     nvidia-container-toolkit
+    emulationstation-de
   ];
 }

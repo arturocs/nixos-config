@@ -153,8 +153,10 @@
   ];
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = ["freeimage-3.18.0-unstable-2024-04-18"];
+  };
   security.polkit.enable = true;
 
   virtualisation.docker.enable = true;
@@ -186,7 +188,7 @@
     "io.dbeaver.DBeaverCommunity"
     "com.github.afrantzis.Bless"
   ];
-  
+
   services.teamviewer = {
     enable = true;
     package = pkgs-unstable.teamviewer;

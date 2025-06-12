@@ -14,7 +14,6 @@
     retroarch-assets
     retroarch-joypad-autoconfig
     bcachefs-tools
-    emulationstation-de
     cura-appimage
     llama-cpp
     (retroarch.withCores (
