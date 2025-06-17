@@ -55,8 +55,6 @@
             tamasfe.even-better-toml
             batisteo.vscode-django
             mhutchie.git-graph
-            github.copilot
-            github.copilot-chat
             svelte.svelte-vscode
           ])
           ++ (with vscode-marketplace; [
@@ -64,6 +62,8 @@
           ])
           ++ (with vscode-marketplace-release; [
             rust-lang.rust-analyzer
+            github.copilot
+            github.copilot-chat
           ]);
       })
   ];
