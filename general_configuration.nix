@@ -124,6 +124,8 @@
   programs.configuradorfnmt.enable = true;
   programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
 
+  networking.extraHosts = "127.0.0.1 release.gitkraken.com";
+
   programs.nh = {
     enable = true;
     clean = {
