@@ -22,7 +22,6 @@
     hunspellDicts.es_ES
     hunspellDicts.en_US
     onlyoffice-bin
-    gitkraken
     blender
     chromium
     discord
@@ -43,7 +42,6 @@
     })
     pcmanfm
     neofetch
-    gitkraken
     calibre
     inputs.nix-software-center.packages.${system}.nix-software-center
     squashfsTools
