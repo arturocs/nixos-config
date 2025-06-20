@@ -77,5 +77,6 @@
     postman
     nvidia-container-toolkit
     emulationstation-de
+    signal-desktop-bin
   ];
 }
