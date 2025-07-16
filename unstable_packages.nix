@@ -56,6 +56,7 @@
             batisteo.vscode-django
             mhutchie.git-graph
             svelte.svelte-vscode
+            vscode-extensions.hashicorp.terraform
           ])
           ++ (with vscode-marketplace; [
             ms-python.autopep8
