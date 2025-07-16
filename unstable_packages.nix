@@ -57,14 +57,15 @@
             mhutchie.git-graph
             svelte.svelte-vscode
             vscode-extensions.hashicorp.terraform
+            github.copilot
+            github.copilot-chat
           ])
           ++ (with vscode-marketplace; [
             ms-python.autopep8
           ])
           ++ (with vscode-marketplace-release; [
             rust-lang.rust-analyzer
-            github.copilot
-            github.copilot-chat
+
           ]);
       })
   ];
