@@ -66,7 +66,6 @@
     unrar
     ghidra-bin
     mame-tools
-    qbittorrent
     freetube
     stremio
     orca-slicer
@@ -78,5 +77,6 @@
     nvidia-container-toolkit
     emulationstation-de
     signal-desktop-bin
+    transmission_4-qt6
   ];
 }
