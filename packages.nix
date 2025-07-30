@@ -78,8 +78,5 @@
     emulationstation-de
     signal-desktop-bin
     transmission_4-qt6
-    terraform
-    terraform-providers.aws
-    awscli
   ];
 }
