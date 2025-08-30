@@ -12,30 +12,30 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?ref=nixos-25.05";
+    nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?ref=nixos-unstable";
+    home-manager.url = "git+https://github.com/nix-community/home-manager.git?ref=release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.url = "git+https://github.com/numtide/flake-utils.git";
     nur = {
-      url = "github:nix-community/NUR";
+      url = "git+https://github.com/nix-community/NUR.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rust-overlay = {
-      url = "github:oxalica/rust-overlay";
+      url = "git+https://github.com/oxalica/rust-overlay.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     plasma-manager = {
-      url = "github:nix-community/plasma-manager/trunk";
+      url = "git+https://github.com/nix-community/plasma-manager.git";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
-    autofirma-nix.url = "github:nix-community/autofirma-nix/release-24.11";
-    nix-software-center.url = "github:snowfallorg/nix-software-center";
-    nix-alien.url = "github:thiagokokada/nix-alien";
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nix-flatpak.url = "git+https://github.com/gmodena/nix-flatpak.git";
+    autofirma-nix.url = "git+https://github.com/nix-community/autofirma-nix.git";
+    nix-software-center.url = "git+https://github.com/snowfallorg/nix-software-center.git";
+    nix-alien.url = "git+https://github.com/thiagokokada/nix-alien.git";
+    nix-vscode-extensions.url = "git+https://github.com/nix-community/nix-vscode-extensions.git";
+    chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?ref=nyxpkgs-unstable";
   };
 
   outputs = {
