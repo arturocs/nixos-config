@@ -16,6 +16,7 @@
     bcachefs-tools
     cura-appimage
     llama-cpp
+    hydralauncher
     (retroarch.withCores (
       cores:
         with libretro; [
