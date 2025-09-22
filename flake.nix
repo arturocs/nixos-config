@@ -16,7 +16,6 @@
     nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?ref=nixos-unstable";
     home-manager.url = "git+https://github.com/nix-community/home-manager.git?ref=release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flake-utils.url = "git+https://github.com/numtide/flake-utils.git";
     nur = {
       url = "git+https://github.com/nix-community/NUR.git";
       inputs.nixpkgs.follows = "nixpkgs";
