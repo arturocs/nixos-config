@@ -34,7 +34,6 @@
     nix-software-center.url = "git+https://github.com/snowfallorg/nix-software-center.git";
     nix-alien.url = "git+https://github.com/thiagokokada/nix-alien.git";
     nix-vscode-extensions.url = "git+https://github.com/nix-community/nix-vscode-extensions.git";
-    chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?ref=nyxpkgs-unstable";
   };
 
   outputs = {
@@ -42,7 +41,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    chaotic,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -63,9 +61,6 @@
           ./nixosvm/hardware-configuration.nix
           ./nixosvm/configuration.nix
           ./general_configuration.nix
-          chaotic.nixosModules.nyx-cache
-          chaotic.nixosModules.nyx-overlay
-          chaotic.nixosModules.nyx-registry
         ];
         specialArgs = {
           inherit home-manager pkgs-unstable inputs;
@@ -77,9 +72,6 @@
           ./desktop/hardware-configuration.nix
           ./desktop/configuration.nix
           ./general_configuration.nix
-          chaotic.nixosModules.nyx-cache
-          chaotic.nixosModules.nyx-overlay
-          chaotic.nixosModules.nyx-registry
         ];
         specialArgs = {
           inherit home-manager pkgs-unstable inputs;

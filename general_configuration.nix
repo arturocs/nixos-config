@@ -19,9 +19,6 @@
     ./unstable_packages.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  #kernel = pkgs.linuxPackages_cachyos.kernel;
-  #system.modulesTree = [ (lib.getOutput "modules"  pkgs.linuxPackages_cachyos.kernel) ];
   boot.tmp.cleanOnBoot = true;
   hardware.enableAllFirmware = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
