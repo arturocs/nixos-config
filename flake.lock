@@ -214,14 +214,14 @@
       "locked": {
         "lastModified": 1739444422,
         "narHash": "sha256-iAVVHi7X3kWORftY+LVbRiStRnQEob2TULWyjMS6dWg=",
-        "ref": "latest",
+        "ref": "refs/tags/latest",
         "rev": "5e54c3ca05a7c7d968ae1ddeabe01d2a9bc1e177",
         "revCount": 98,
         "type": "git",
         "url": "https://github.com/gmodena/nix-flatpak.git"
       },
       "original": {
-        "ref": "latest",
+        "ref": "refs/tags/latest",
         "type": "git",
         "url": "https://github.com/gmodena/nix-flatpak.git"
       }
@@ -322,11 +322,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1758506415,
-        "narHash": "sha256-nM3vIhN+dRm37VsaDLtnvYrTSJ44RxetY3rzJVT9Z7c=",
+        "lastModified": 1759197050,
+        "narHash": "sha256-j1fhS3+RaFRokiJyVu7NeXAX2YdU16nDjDGpzTXowAY=",
         "ref": "refs/heads/master",
-        "rev": "d7cdbfe6c5f85827da2e10bc0c093e2808c341ec",
-        "revCount": 1600,
+        "rev": "645f200c7e725bc8002d25f18e71673807287820",
+        "revCount": 1607,
         "type": "git",
         "url": "https://github.com/nix-community/nix-vscode-extensions.git"
       },
@@ -379,11 +379,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1758277210,
-        "narHash": "sha256-iCGWf/LTy+aY0zFu8q12lK8KuZp7yvdhStehhyX1v8w=",
+        "lastModified": 1759036355,
+        "narHash": "sha256-0m27AKv6ka+q270dw48KflE0LwQYrO7Fm4/2//KCVWg=",
         "ref": "nixos-unstable",
-        "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
-        "revCount": 864002,
+        "rev": "e9f00bd893984bc8ce46c895c3bf7cac95331127",
+        "revCount": 868392,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -459,11 +459,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1758346548,
-        "narHash": "sha256-afXE7AJ7MY6wY1pg/Y6UPHNYPy5GtUKeBkrZZ/gC71E=",
+        "lastModified": 1759143472,
+        "narHash": "sha256-TvODmeR2W7yX/JmOCmP+lAFNkTT7hAxYcF3Kz8SZV3w=",
         "ref": "nixos-25.05",
-        "rev": "b2a3852bd078e68dd2b3dfa8c00c67af1f0a7d20",
-        "revCount": 810175,
+        "rev": "5ed4e25ab58fd4c028b59d5611e14ea64de51d23",
+        "revCount": 810541,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -481,11 +481,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758536768,
-        "narHash": "sha256-QrQrYAVWsBOnZzEwc3XQ2f2fqojsrfbdYIasQosEaQ8=",
+        "lastModified": 1759208743,
+        "narHash": "sha256-gsQDpRxDf6EyON14ng4uRvwCsO+V0a/aUy7J/tDiZ2g=",
         "ref": "refs/heads/main",
-        "rev": "b5931428abf7141858255faeef479d0d16f46ea2",
-        "revCount": 34715,
+        "rev": "277bf80893db769e7c5b665fd62ebd23424543b5",
+        "revCount": 34904,
         "type": "git",
         "url": "https://github.com/nix-community/NUR.git"
       },
@@ -504,11 +504,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758185783,
-        "narHash": "sha256-6fX2CG8PzdBNwJGBISnf/nVHUVMZdCsekT1mP672Uh8=",
+        "lastModified": 1759157415,
+        "narHash": "sha256-Fg8cOnVoIe0uQ38UpR6XZzRCwDsjjozVwfevW9yCLI0=",
         "ref": "refs/heads/trunk",
-        "rev": "6a7d78cebd9a0f84a508bec9bc47ac504c5f51f4",
-        "revCount": 289,
+        "rev": "df5b3e6da631f732c26c6044c7cccb8706b4f479",
+        "revCount": 293,
         "type": "git",
         "url": "https://github.com/nix-community/plasma-manager.git"
       },
@@ -539,11 +539,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758508617,
-        "narHash": "sha256-kx2uELmVnAbiekj/YFfWR26OXqXedImkhe2ocnbumTA=",
+        "lastModified": 1759199574,
+        "narHash": "sha256-w24RYly3VSVKp98rVfCI1nFYfQ0VoWmShtKPCbXgK6A=",
         "ref": "refs/heads/master",
-        "rev": "d2bac276ac7e669a1f09c48614538a37e3eb6d0f",
-        "revCount": 1924,
+        "rev": "381776b12d0d125edd7c1930c2041a1471e586c0",
+        "revCount": 1932,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay.git"
       },
