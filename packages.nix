@@ -76,7 +76,6 @@
     postman
     nvidia-container-toolkit
     emulationstation-de
-    signal-desktop-bin
     transmission_4-qt6
     libjxl
     ntfs3g
