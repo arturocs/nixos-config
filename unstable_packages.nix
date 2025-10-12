@@ -17,6 +17,7 @@
     cura-appimage
     llama-cpp
     hydralauncher
+    orca-slicer
     (retroarch.withCores (
       cores:
         with libretro; [
