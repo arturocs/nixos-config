@@ -30,7 +30,7 @@
           melonds
           ppsspp
           pcsx2
-          #dolphin
+          dolphin
           fbneo
           parallel-n64
         ]
