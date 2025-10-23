@@ -17,6 +17,7 @@
     inputs.autofirma-nix.nixosModules.default
     ./packages.nix
     ./unstable_packages.nix
+    ./stupid_packages.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.tmp.cleanOnBoot = true;

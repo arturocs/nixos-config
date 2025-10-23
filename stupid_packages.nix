@@ -1,0 +1,33 @@
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    sl
+    lsd
+    asciiquarium
+    cmatrix
+    fortune
+    cowsay
+    toilet
+    figlet
+    rig
+    bb
+    dotacat
+    hollywood
+    charasay
+    ponysay
+    lavat
+    #pond
+    nms
+    pipes
+    nyancat
+    aalib
+    cbonsai
+    genact
+    tty-clock
+    tenki
+  ];
+}
