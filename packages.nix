@@ -79,5 +79,7 @@
     libjxl
     ntfs3g
     exiftool
+    inetutils
+    gdu
   ];
 }
