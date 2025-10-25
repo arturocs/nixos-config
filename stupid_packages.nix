@@ -15,12 +15,11 @@
     figlet
     rig
     bb
-    dotacat
+    lolcat
     hollywood
     charasay
     ponysay
     lavat
-    #pond
     nms
     pipes
     nyancat
