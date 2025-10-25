@@ -8,6 +8,8 @@
     melonDS
     pcsx2
     dolphin-emu
+    ares
+    rmg
     godot
     distrobox
     boxbuddy
