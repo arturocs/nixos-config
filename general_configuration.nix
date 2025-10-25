@@ -159,7 +159,7 @@
   # Allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["freeimage-3.18.0-unstable-2024-04-18"];
+    permittedInsecurePackages = ["freeimage-3.18.0-unstable-2024-04-18" "mbedtls-2.28.10"];
   };
   security.polkit.enable = true;
 
