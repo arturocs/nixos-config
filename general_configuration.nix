@@ -120,12 +120,16 @@
   home-manager.users.arturo = import ./home.nix;
 
   programs.java.enable = true;
-  programs.autofirma.enable = true;
-  programs.autofirma.fixJavaCerts = true;
-  programs.autofirma.firefoxIntegration.enable = true; # Para que Firefox utilice AutoFirma
-  programs.configuradorfnmt.enable = true;
-  programs.configuradorfnmt.firefoxIntegration.enable = true; # Para que Firefox utilice el Configurador FNMT
+  programs.autofirma = {
+    enable = true;
+    firefoxIntegration.enable = true;
+  };
 
+  # The FNMT certificate configurator
+  programs.configuradorfnmt = {
+    enable = true;
+    firefoxIntegration.enable = true;
+  };
   networking.extraHosts = "127.0.0.1 release.gitkraken.com";
 
   programs.nh = {

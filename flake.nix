@@ -30,7 +30,14 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-flatpak.url = "git+https://github.com/gmodena/nix-flatpak.git?ref=refs/tags/latest";
-    autofirma-nix.url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.05";
+    #autofirma-nix.url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.05";
+
+    autofirma-nix = {
+      #url = "git+https://github.com/nix-community/autofirma-nix.git";
+      url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-software-center.url = "git+https://github.com/snowfallorg/nix-software-center.git";
     nix-alien.url = "git+https://github.com/thiagokokada/nix-alien.git";
     nix-vscode-extensions.url = "git+https://github.com/nix-community/nix-vscode-extensions.git";

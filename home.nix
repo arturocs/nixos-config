@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./plasma_config.nix
   ];
@@ -89,24 +93,32 @@
     enable = true;
     nativeMessagingHosts = [pkgs.vdhcoapp];
     languagePacks = ["es-ES"];
-    profiles.arturo = {
-      settings = {
-        "browser.translations.enable" = false;
-        "widget.use-xdg-desktop-portal.file-picker" = 1;
+    policies = {
+      SecurityDevices = {
+        "OpenSC PKCS11" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
       };
-      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-        i-dont-care-about-cookies
-        darkreader
-        video-downloadhelper
-        cookie-autodelete
-        plasma-integration
-        facebook-container
-        sponsorblock
-        windscribe
-        wappalyzer
-        user-agent-string-switcher
-      ];
+    };
+    profiles = {
+      arturo = {
+        id = 0;
+        settings = {
+          "browser.translations.enable" = false;
+          "widget.use-xdg-desktop-portal.file-picker" = 1;
+        };
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          i-dont-care-about-cookies
+          darkreader
+          video-downloadhelper
+          cookie-autodelete
+          plasma-integration
+          facebook-container
+          sponsorblock
+          windscribe
+          wappalyzer
+          user-agent-string-switcher
+        ];
+      };
     };
   };
 }
