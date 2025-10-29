@@ -1,5 +1,5 @@
 {
-  description = "Test flake";
+  description = "My flake";
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
@@ -30,8 +30,6 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-flatpak.url = "git+https://github.com/gmodena/nix-flatpak.git?ref=refs/tags/latest";
-    #autofirma-nix.url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.05";
-
     autofirma-nix = {
       #url = "git+https://github.com/nix-community/autofirma-nix.git";
       url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.05";

@@ -14,7 +14,6 @@
     inputs.nur.modules.nixos.default
     home-manager.nixosModules.home-manager
     inputs.nix-flatpak.nixosModules.nix-flatpak
-    inputs.autofirma-nix.nixosModules.default
     ./packages.nix
     ./unstable_packages.nix
     ./stupid_packages.nix
@@ -120,16 +119,6 @@
   home-manager.users.arturo = import ./home.nix;
 
   programs.java.enable = true;
-  programs.autofirma = {
-    enable = true;
-    firefoxIntegration.enable = true;
-  };
-
-  # The FNMT certificate configurator
-  programs.configuradorfnmt = {
-    enable = true;
-    firefoxIntegration.enable = true;
-  };
   networking.extraHosts = "127.0.0.1 release.gitkraken.com";
 
   programs.nh = {
