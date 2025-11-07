@@ -81,5 +81,6 @@
     exiftool
     inetutils
     gdu
+    ocrmypdf
   ];
 }
