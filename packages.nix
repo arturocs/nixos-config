@@ -7,7 +7,7 @@
   environment.systemPackages = with pkgs; [
     wget
     alejandra
-    (python3Full.override {
+    (python3.override {
       enableOptimizations = true;
       reproducibleBuild = false;
     })
@@ -21,7 +21,7 @@
     hunspell
     hunspellDicts.es_ES
     hunspellDicts.en_US
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     blender
     chromium
     discord
@@ -61,20 +61,19 @@
     p7zip
     lsof
     zip
-    dolphin-emu-primehack
+    #dolphin-emu-primehack
     mold
     unrar
     ghidra-bin
     mame-tools
     freetube
-    stremio
     gittyup
     mgba
     gh
     nixpkgs-review
     postman
     nvidia-container-toolkit
-    emulationstation-de
+    #emulationstation-de
     transmission_4-qt6
     libjxl
     ntfs3g

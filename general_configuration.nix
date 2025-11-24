@@ -185,6 +185,7 @@
     "io.dbeaver.DBeaverCommunity"
     "com.github.afrantzis.Bless"
     "com.github.tchx84.Flatseal"
+    "com.stremio.Stremio"
   ];
 
   services.teamviewer = {
