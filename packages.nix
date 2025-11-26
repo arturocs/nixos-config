@@ -55,7 +55,7 @@
     docker-compose
     file
     inputs.nix-alien.packages.${system}.nix-alien
-    config.boot.kernelPackages.perf
+    perf
     appimage-run
     lz4
     p7zip
@@ -73,7 +73,6 @@
     nixpkgs-review
     postman
     nvidia-container-toolkit
-    #emulationstation-de
     transmission_4-qt6
     libjxl
     ntfs3g

@@ -115,7 +115,7 @@
   home-manager.extraSpecialArgs = {inherit inputs;};
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+  home-manager.sharedModules = [inputs.plasma-manager.homeModules.plasma-manager];
   home-manager.users.arturo = import ./home.nix;
 
   programs.java.enable = true;
@@ -152,7 +152,7 @@
   # Allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["freeimage-3.18.0-unstable-2024-04-18" "mbedtls-2.28.10"];
+    permittedInsecurePackages = [];
   };
   security.polkit.enable = true;
 
