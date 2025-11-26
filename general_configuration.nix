@@ -14,6 +14,7 @@
     inputs.nur.modules.nixos.default
     home-manager.nixosModules.home-manager
     inputs.nix-flatpak.nixosModules.nix-flatpak
+    inputs.autofirma-nix.nixosModules.default
     ./packages.nix
     ./unstable_packages.nix
     ./stupid_packages.nix
@@ -117,6 +118,28 @@
   home-manager.useUserPackages = true;
   home-manager.sharedModules = [inputs.plasma-manager.homeModules.plasma-manager];
   home-manager.users.arturo = import ./home.nix;
+
+  programs.autofirma = {
+    enable = true;
+    firefoxIntegration.enable = true;
+  };
+
+  # The FNMT certificate configurator
+  programs.configuradorfnmt = {
+    enable = true;
+    firefoxIntegration.enable = true;
+  };
+
+  # Firefox configured to work with AutoFirma
+  programs.firefox = {
+    enable = true;
+    policies.SecurityDevices = {
+      "OpenSC PKCS#11" = "${pkgs.opensc}/lib/opensc-pkcs11.so";
+    };
+  };
+
+  # Hacky fix to autofirma error
+  environment.etc."AutoFirma/autofirma.pfx".source = "/home/arturo/.afirma/AutoFirma/autofirma.pfx";
 
   programs.java.enable = true;
   networking.extraHosts = "127.0.0.1 release.gitkraken.com";
