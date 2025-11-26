@@ -202,6 +202,7 @@
   programs.partition-manager.enable = true;
   services.flatpak.enable = true;
   services.flatpak.update.auto.enable = true;
+  services.flatpak.uninstallUnmanaged = true;
   services.flatpak.packages = [
     "com.heroicgameslauncher.hgl"
     "org.jdownloader.JDownloader"
