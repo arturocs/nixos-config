@@ -7,7 +7,7 @@
   environment.systemPackages = with pkgs; [
     wget
     alejandra
-    (python3.override {
+    (python314.override {
       enableOptimizations = true;
       reproducibleBuild = false;
     })
