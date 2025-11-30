@@ -28,7 +28,19 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = ["nix-command" "flakes"];
+    substituters = [
+      "https://nix-community.cachix.org"
+      "https://cuda-maintainers.cachix.org"
+      "https://cache.nixos.org/"
+    ];
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+    ];
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -237,7 +249,6 @@
   services.openssh.enable = true;
 
   zramSwap.enable = true;
-  nix.settings.auto-optimise-store = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

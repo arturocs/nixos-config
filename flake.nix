@@ -1,16 +1,6 @@
 {
   description = "My flake";
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://cuda-maintainers.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
-    ];
-  };
-
+  
   inputs = {
     nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?ref=release-25.11";
     nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?ref=nixpkgs-unstable";
