@@ -169,7 +169,14 @@
     enable = true;
     lfs.enable = true;
   };
-
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+  programs.appimage.package = pkgs.appimage-run.override {
+    extraPkgs = pkgs:
+      with pkgs; [
+        espeak-ng
+      ];
+  };
   nixpkgs.overlays = [
     inputs.rust-overlay.overlays.default
     (self: super: {

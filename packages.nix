@@ -56,7 +56,6 @@
     file
     inputs.nix-alien.packages.${system}.nix-alien
     perf
-    appimage-run
     lz4
     p7zip
     lsof
