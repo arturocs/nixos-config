@@ -235,7 +235,7 @@
     enable = true;
     package = pkgs-unstable.teamviewer;
   };
-
+  services.system76-scheduler.enable = true;
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableKvm = true;
