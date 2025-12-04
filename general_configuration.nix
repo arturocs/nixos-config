@@ -18,6 +18,7 @@
     ./packages.nix
     ./unstable_packages.nix
     ./stupid_packages.nix
+    ./plasma_overlay.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.tmp.cleanOnBoot = true;
