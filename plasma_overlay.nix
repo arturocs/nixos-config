@@ -1,5 +1,4 @@
 # Nix Overlay to fix Plasma snappyness issues in NixOS
-
 {
   config,
   pkgs,
