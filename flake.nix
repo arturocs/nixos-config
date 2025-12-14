@@ -29,6 +29,7 @@
     nix-software-center.url = "git+https://github.com/snowfallorg/nix-software-center.git";
     nix-alien.url = "git+https://github.com/thiagokokada/nix-alien.git";
     nix-vscode-extensions.url = "git+https://github.com/nix-community/nix-vscode-extensions.git";
+    #nix-cachyos-kernel.url = "git+https://github.com/xddxdd/nix-cachyos-kernel.git";
   };
 
   outputs = {

@@ -20,6 +20,7 @@
     ./stupid_packages.nix
     ./plasma_overlay.nix
   ];
+  #boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.tmp.cleanOnBoot = true;
   hardware.enableAllFirmware = true;
@@ -179,6 +180,7 @@
       ];
   };
   nixpkgs.overlays = [
+    #inputs.nix-cachyos-kernel.overlays.default
     inputs.rust-overlay.overlays.default
     (self: super: {
       # try again in 25.04 https://github.com/NixOS/nixpkgs/issues/372679
