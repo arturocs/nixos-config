@@ -57,15 +57,17 @@
             batisteo.vscode-django
             mhutchie.git-graph
             svelte.svelte-vscode
-          ])
-          ++ (with vscode-marketplace; [
-            ms-python.autopep8
-          ])
-          ++ (with vscode-marketplace-release; [
-            rust-lang.rust-analyzer
             github.copilot
             github.copilot-chat
-          ]);
+            rust-lang.rust-analyzer
+          ])
+          ++ (with vscode-marketplace; [
+            ])
+          ++ (with vscode-marketplace-release; [
+            # ms-python.autopep8
+          ])
+          ++ (with open-vsx; [
+            ]);
       })
   ];
 }
