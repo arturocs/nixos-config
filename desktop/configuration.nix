@@ -6,6 +6,7 @@
 }: {
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
+  hardware.cpu.amd.updateMicrocode = true;
   networking.networkmanager.wifi.powersave = false;
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 3;
