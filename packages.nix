@@ -79,5 +79,7 @@
     inetutils
     gdu
     ocrmypdf
+    hugo
+    go
   ];
 }
