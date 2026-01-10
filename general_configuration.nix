@@ -182,16 +182,6 @@
   nixpkgs.overlays = [
     #inputs.nix-cachyos-kernel.overlays.default
     inputs.rust-overlay.overlays.default
-    (self: super: {
-      # try again in 25.04 https://github.com/NixOS/nixpkgs/issues/372679
-      # stdenv = (super.withCFlags ["-O3" "-flto"] super.stdenv) // {
-      stdenv =
-        super.stdenv
-        // {
-          useMoldLinker = true;
-          impureUseNativeOptimizations = true;
-        };
-    })
   ];
 
   # Allow unfree packages
