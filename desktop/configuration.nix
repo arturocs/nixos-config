@@ -19,13 +19,17 @@
   # Enable OpenGL
   hardware.graphics.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
-  virtualisation.docker.daemon.settings.features.cdi = true;
   nixpkgs.config.nvidia.acceptLicense = true;
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
   environment.systemPackages = [
     pkgs.nvtopPackages.nvidia
   ];
+  
+  virtualisation.docker.daemon.settings.features.cdi = true;
+  virtualisation.virtualbox.host.enableKvm = true;
+  virtualisation.virtualbox.host.addNetworkInterface = false;
+
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;

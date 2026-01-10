@@ -231,8 +231,6 @@
   services.system76-scheduler.enable = true;
   services.xserver.xautolock.time = 99999;
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableKvm = true;
-  virtualisation.virtualbox.host.addNetworkInterface = false;
   users.extraGroups.vboxusers.members = ["arturo"];
 
   # Some programs need SUID wrappers, can be configured further or are
