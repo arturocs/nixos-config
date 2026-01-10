@@ -61,12 +61,10 @@
     lsof
     zip
     dolphin-emu-primehack
-    mold
     unrar
     ghidra-bin
     mame-tools
     freetube
-    gittyup
     mgba
     gh
     nixpkgs-review
@@ -79,7 +77,5 @@
     inetutils
     gdu
     ocrmypdf
-    hugo
-    go
   ];
 }
