@@ -77,5 +77,6 @@
     inetutils
     gdu
     ocrmypdf
+    kodi
   ];
 }
