@@ -78,5 +78,6 @@
     gdu
     ocrmypdf
     kodi
+    usbimager
   ];
 }
