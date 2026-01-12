@@ -57,13 +57,13 @@
             batisteo.vscode-django
             mhutchie.git-graph
             svelte.svelte-vscode
+            github.copilot
+            github.copilot-chat
           ])
           ++ (with vscode-marketplace; [
             ])
           ++ (with vscode-marketplace-release; [
             ms-python.autopep8
-            github.copilot
-            github.copilot-chat
             rust-lang.rust-analyzer
           ])
           ++ (with open-vsx; [
