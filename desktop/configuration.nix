@@ -25,7 +25,7 @@
   environment.systemPackages = [
     pkgs.nvtopPackages.nvidia
   ];
-  
+
   virtualisation.docker.daemon.settings.features.cdi = true;
   virtualisation.virtualbox.host.enableKvm = true;
   virtualisation.virtualbox.host.addNetworkInterface = false;
