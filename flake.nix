@@ -21,8 +21,8 @@
     };
     nix-flatpak.url = "git+https://github.com/gmodena/nix-flatpak.git?ref=refs/tags/latest";
     autofirma-nix = {
-      url = "git+https://github.com/nix-community/autofirma-nix.git";
-      #url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.05";
+      #url = "git+https://github.com/nix-community/autofirma-nix.git";
+      url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
