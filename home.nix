@@ -112,6 +112,7 @@
           windscribe
           wappalyzer
           user-agent-string-switcher
+          react-devtools
         ];
       };
     };
