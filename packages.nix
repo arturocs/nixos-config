@@ -77,7 +77,6 @@
     inetutils
     gdu
     ocrmypdf
-    kodi
     usbimager
   ];
 }
