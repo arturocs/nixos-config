@@ -223,6 +223,7 @@
     "com.github.tchx84.Flatseal"
     "com.stremio.Stremio"
   ];
+  services.lvm.enable = false;
 
   services.teamviewer = {
     enable = true;
