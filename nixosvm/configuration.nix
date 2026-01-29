@@ -8,6 +8,6 @@
   system.activationScripts.createSymlinks.text = ''
     #!/bin/sh
     ln -sf /nix/flatpak /var/lib/flatpak
-    ln -sf /nix/nix_cache /home/arturo/.cache/nix/
+    ln -sf /nix/nix_cache /home/arturo/.cache/nix
   '';
 }
