@@ -79,5 +79,6 @@
     ocrmypdf
     usbimager
     android-file-transfer
+    mozjpeg
   ];
 }
