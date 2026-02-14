@@ -78,5 +78,6 @@
     gdu
     ocrmypdf
     usbimager
+    android-file-transfer
   ];
 }
