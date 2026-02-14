@@ -71,8 +71,8 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = pkgs.linuxPackages_latest.nvidia_x11;
-    #package = pkgs-unstable.linuxPackages_latest.nvidia_x11;
+    #package = pkgs.linuxPackages_latest.nvidia_x11;
+    package = pkgs-unstable.linuxPackages_latest.nvidia_x11;
     # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
     #   version = "580.95.05";
     #   sha256_64bit = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
