@@ -14,6 +14,19 @@
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "75%";
   networking.hostName = "desktop"; # Define your hostname.
+
+  networking.bonds.bond0 = {
+    interfaces = ["enp11s0" "wlp12s0"];
+    driverOptions = {
+      mode = "balance-alb";
+      miimon = "100";
+    };
+  };
+
+  networking.interfaces.bond0.useDHCP = true;
+  networking.interfaces.enp11s0.useDHCP = false;
+  networking.interfaces.wlp12s0.useDHCP = false;
+
   #networking.networkmanager.wifi.backend = "iwd";
   boot.kernelParams = ["iwlmvm.power_scheme=1"];
   # Enable OpenGL
