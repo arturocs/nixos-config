@@ -5,7 +5,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs-unstable; [
-    melonDS
+    melonds
     pcsx2
     dolphin-emu
     ares
