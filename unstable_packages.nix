@@ -60,10 +60,11 @@
             batisteo.vscode-django
             mhutchie.git-graph
             svelte.svelte-vscode
-            github.copilot
-            github.copilot-chat
+
           ])
-          ++ (with vscode-marketplace; [
+          ++ (with vscode-marketplace; [    
+            #github.copilot
+            github.copilot-chat
             ])
           ++ (with vscode-marketplace-release; [
             ms-python.autopep8
