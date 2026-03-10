@@ -16,7 +16,11 @@
     gcc
     llvmPackages.libcxxClang
     typora
-    telegram-desktop
+    (telegram-desktop.override {
+      unwrapped = telegram-desktop.unwrapped.override {
+        minizip = minizip-ng;
+      };
+    })
     libreoffice-qt
     hunspell
     hunspellDicts.es_ES
