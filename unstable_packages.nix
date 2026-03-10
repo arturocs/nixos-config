@@ -63,7 +63,6 @@
 
           ])
           ++ (with vscode-marketplace; [    
-            #github.copilot
             github.copilot-chat
             ])
           ++ (with vscode-marketplace-release; [
