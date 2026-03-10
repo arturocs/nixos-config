@@ -18,7 +18,7 @@
     ./packages.nix
     ./unstable_packages.nix
     #./stupid_packages.nix
-    ./plasma_overlay.nix
+    #./plasma_overlay.nix
   ];
   #boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
   boot.kernelPackages = pkgs.linuxPackages_latest;
