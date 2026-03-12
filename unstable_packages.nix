@@ -10,6 +10,7 @@
     dolphin-emu
     ares
     rmg
+    mgba
     godot
     distrobox
     boxbuddy

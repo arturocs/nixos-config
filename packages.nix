@@ -69,7 +69,6 @@
     ghidra-bin
     mame-tools
     freetube
-    mgba
     gh
     nixpkgs-review
     postman
