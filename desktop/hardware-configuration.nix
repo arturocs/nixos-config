@@ -51,6 +51,18 @@
     fsType = "squashfs";
     options = ["nofail"];
   };
+  
+  fileSystems."/home/arturo/Escritorio/UDo2/backups_real_prod" = {
+    device = "/hdd/backups_real_prod.sfs";
+    fsType = "squashfs";
+    options = ["nofail"];
+  };
+
+  fileSystems."/home/arturo/Escritorio/UDo2/udo-dev/venv" = {
+    device = "/hdd/venv.sfs";
+    fsType = "squashfs";
+    options = ["nofail"];
+  };
 
   swapDevices = [];
 
