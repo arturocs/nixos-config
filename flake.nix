@@ -49,30 +49,17 @@
       };
       overlays = [inputs.nix-vscode-extensions.overlays.default];
     };
+
+    mkSystem = name:
+      lib.nixosSystem {
+        inherit system;
+        modules = [./${name}/hardware-configuration.nix ./${name}/configuration.nix ./general_configuration.nix];
+        specialArgs = {inherit home-manager pkgs-unstable inputs;};
+      };
   in {
     nixosConfigurations = {
-      nixosvm = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./nixosvm/hardware-configuration.nix
-          ./nixosvm/configuration.nix
-          ./general_configuration.nix
-        ];
-        specialArgs = {
-          inherit home-manager pkgs-unstable inputs;
-        };
-      };
-      desktop = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./desktop/hardware-configuration.nix
-          ./desktop/configuration.nix
-          ./general_configuration.nix
-        ];
-        specialArgs = {
-          inherit home-manager pkgs-unstable inputs;
-        };
-      };
+      nixosvm = mkSystem "nixosvm";
+      desktop = mkSystem "desktop";
     };
   };
 }
