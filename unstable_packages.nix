@@ -24,6 +24,7 @@
     orca-slicer
     antigravity-fhs
     lmstudio
+    dwarfs
     (retroarch.withCores (
       cores:
         with libretro; [
