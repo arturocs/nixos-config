@@ -4,6 +4,9 @@
   pkgs-unstable,
   ...
 }: {
+  imports = [
+    ./storage.nix
+  ];
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
   hardware.cpu.amd.updateMicrocode = true;
