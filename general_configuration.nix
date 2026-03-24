@@ -23,6 +23,14 @@
   #boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
   boot.tmp.cleanOnBoot = true;
+  boot.kernel.sysfs.module.zswap.parameters = {
+    enabled = true;
+    compressor = "lz4";
+    #zpool = cfg.zpool;
+    #max_pool_percent = 20;
+    #accept_threshold_percent = 90t;
+    shrinker_enabled = true;
+  };
   hardware.enableAllFirmware = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
