@@ -179,6 +179,7 @@
         espeak-ng
       ];
   };
+  programs.fuse.userAllowOther = true;
   nixpkgs.overlays = [
     #inputs.nix-cachyos-kernel.overlays.default
     inputs.rust-overlay.overlays.default
