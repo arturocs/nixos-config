@@ -256,7 +256,10 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    algorithm = "lz4";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
