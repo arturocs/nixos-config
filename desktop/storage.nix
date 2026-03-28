@@ -8,23 +8,23 @@ in {
   };
 
   fileSystems."/home/arturo/.local/share/dolphin-emu/Load/Textures/Metroid Prime 1 HD" = {
-    device = "${dwarfs}/hdd/ROMS/Dolphin textures/Metroid_Prime_1.dwarfs";
-    fsType = "fuse";
-    options = ["nofail" "allow_other" "ro" "default_permissions" "uid=1000" "gid=100"];
+    device = "/hdd/ROMS/Dolphin textures/Metroid_Prime_1.sfs";
+    fsType = "squashfs";
+    options = ["nofail"];
     depends = ["/hdd"];
   };
 
   fileSystems."/home/arturo/.local/share/dolphin-emu/Load/Textures/Metroid Prime 2 HD" = {
-    device = "${dwarfs}/hdd/ROMS/Dolphin textures/Metroid_Prime_2.dwarfs";
-    fsType = "fuse";
-    options = ["nofail" "allow_other" "ro" "default_permissions" "uid=1000" "gid=100"];
+    device = "/hdd/ROMS/Dolphin textures/Metroid_Prime_2.sfs";
+    fsType = "squashfs";
+    options = ["nofail"];
     depends = ["/hdd"];
   };
 
   fileSystems."/home/arturo/.local/share/dolphin-emu/Load/Textures/Metroid Prime 3 HD" = {
-    device = "${dwarfs}/hdd/ROMS/Dolphin textures/Metroid_Prime_3.dwarfs";
-    fsType = "fuse";
-    options = ["nofail" "allow_other" "ro" "default_permissions" "uid=1000" "gid=100"];
+    device = "/hdd/ROMS/Dolphin textures/Metroid_Prime_3.sfs";
+    fsType = "squashfs";
+    options = ["nofail"];
     depends = ["/hdd"];
   };
 
