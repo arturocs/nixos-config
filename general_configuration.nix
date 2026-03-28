@@ -25,9 +25,9 @@
   boot.tmp.cleanOnBoot = true;
   boot.kernel.sysfs.module.zswap.parameters = {
     enabled = true;
-    compressor = "lz4";
+    compressor = "zstd";
     #zpool = cfg.zpool;
-    #max_pool_percent = 20;
+    max_pool_percent = 30;
     #accept_threshold_percent = 90t;
     shrinker_enabled = true;
   };
