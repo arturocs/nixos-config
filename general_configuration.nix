@@ -257,7 +257,7 @@
   services.openssh.enable = true;
 
   zramSwap = {
-    enable = true;
+    enable = false;
     algorithm = "lz4";
   };
 
