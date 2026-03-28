@@ -108,11 +108,13 @@
           cookie-autodelete
           plasma-integration
           facebook-container
-          sponsorblock
-          windscribe
-          wappalyzer
-          user-agent-string-switcher
-          react-devtools
+          toxcancel
+          #violentmonkey
+          #sponsorblock
+          #windscribe
+          #wappalyzer
+          #user-agent-string-switcher
+          #react-devtools
         ];
       };
     };
