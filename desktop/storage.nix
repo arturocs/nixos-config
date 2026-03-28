@@ -28,14 +28,14 @@ in {
     depends = ["/hdd"];
   };
 
-  fileSystems."/home/arturo/Escritorio/UDo2/backups_real_prod" = {
+  fileSystems."/home/arturo/Escritorio/UDo3/backups_real_prod" = {
     device = "${dwarfs}/hdd/backups_real_prod.dwarfs";
     fsType = "fuse";
     options = ["nofail" "allow_other" "ro" "default_permissions" "uid=1000" "gid=100"];
     depends = ["/hdd"];
   };
 
-  fileSystems."/home/arturo/Escritorio/UDo2/udo-dev/venv" = {
+  fileSystems."/home/arturo/Escritorio/UDo3/udo-dev/venv" = {
     device = "${dwarfs}/hdd/venv.dwarfs";
     fsType = "fuse";
     options = ["nofail" "allow_other" "ro" "default_permissions" "uid=1000" "gid=100"];
