@@ -9,7 +9,7 @@
     pcsx2
     dolphin-emu
     ares
-    #rmg
+    rmg
     mgba
     godot
     distrobox
