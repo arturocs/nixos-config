@@ -42,6 +42,17 @@
     pkgs.nvtopPackages.nvidia
   ];
 
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true; # only needed for Wayland -- omit this when using with Xorg
+    openFirewall = true;
+    package = pkgs.sunshine.override {
+      cudaSupport = true;
+      cudaPackages = pkgs.cudaPackages;
+    };
+  };
+
   virtualisation.docker.daemon.settings.features.cdi = true;
   virtualisation.virtualbox.host.enableKvm = true;
   virtualisation.virtualbox.host.addNetworkInterface = false;

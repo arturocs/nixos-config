@@ -34,5 +34,4 @@ in {
     options = ["nofail" "allow_other" "ro" "default_permissions" "uid=1000" "gid=100"];
     depends = ["/hdd"];
   };
-
 }
