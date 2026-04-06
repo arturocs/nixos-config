@@ -85,15 +85,15 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-
+    package = pkgs.linuxKernel.packages.linux_6_18.nvidia_x11;
     #package = pkgs.linuxPackages_latest.nvidia_x11;
     #package = pkgs-unstable.linuxPackages_latest.nvidia_x11;
-    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      version = "590.48.01";
-      sha256_64bit = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
-      openSha256 = "sha256-hECHfguzwduEfPo5pCDjWE/MjtRDhINVr4b1awFdP44=";
-      settingsSha256 = "sha256-4SfCWp3swUp+x+4cuIZ7SA5H7/NoizqgPJ6S9fm90fA=";
-      persistencedSha256 = "";
-    };
+    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    #   version = "590.48.01";
+    #   sha256_64bit = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
+    #   openSha256 = "sha256-hECHfguzwduEfPo5pCDjWE/MjtRDhINVr4b1awFdP44=";
+    #   settingsSha256 = "sha256-4SfCWp3swUp+x+4cuIZ7SA5H7/NoizqgPJ6S9fm90fA=";
+    #   persistencedSha256 = "";
+    # };
   };
 }
