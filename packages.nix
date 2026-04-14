@@ -79,5 +79,6 @@
     usbimager
     android-file-transfer
     mozjpeg
+    uv
   ];
 }
