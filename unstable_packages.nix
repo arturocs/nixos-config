@@ -25,7 +25,6 @@
     antigravity-fhs
     lmstudio
     dwarfs
-    digikam
     (retroarch.withCores (
       cores:
         with libretro; [
