@@ -13,11 +13,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772351362,
-        "narHash": "sha256-gn4xty9JzGutJ8RCT676u0OrkL3IfIbFW79+Q/IGc2A=",
+        "lastModified": 1776853481,
+        "narHash": "sha256-3BrnLtIJC7xdkJec3e0NPTcJ43Tiapl3zdEg8GZ7px4=",
         "ref": "release-25.11",
-        "rev": "51cb01cf22735bf568234ae8e8e2024bcf6846c2",
-        "revCount": 465,
+        "rev": "cc047cc101438dda5b1ab7a5fe7e28bf6f79bfce",
+        "revCount": 466,
         "type": "git",
         "url": "https://github.com/nix-community/autofirma-nix.git"
       },
@@ -84,11 +84,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769996383,
-        "narHash": "sha256-AnYjnFWgS49RlqX7LrC4uA+sCCDBj0Ry/WOJ5XWAsa0=",
+        "lastModified": 1775087534,
+        "narHash": "sha256-91qqW8lhL7TLwgQWijoGBbiD4t7/q75KTi8NxjVmSmA=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "57928607ea566b5db3ad13af0e57e921e6b12381",
+        "rev": "3107b77cd68437b9a76194f0f7f9c55f2329ca5b",
         "type": "github"
       },
       "original": {
@@ -123,11 +123,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1772302941,
-        "narHash": "sha256-TL3+ckbOTILXrR0qSK3dJj2BJ0S5yz/YSsUF1oEgd9g=",
+        "lastModified": 1775425411,
+        "narHash": "sha256-KY6HsebJHEe5nHOWP7ur09mb0drGxYSzE3rQxy62rJo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9b9142b5fe214c2adabe86257c33e022372b7c96",
+        "rev": "0d02ec1d0a05f88ef9e74b516842900c41f0f2fe",
         "type": "github"
       },
       "original": {
@@ -306,11 +306,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1776656326,
-        "narHash": "sha256-cUPRTkwfunNVuPef4KCFqHaLvBjCbqma2hGtHT77YJM=",
+        "lastModified": 1777261032,
+        "narHash": "sha256-J9Hai2fJUd3nE/JhfwDPvi0mgzoIttKZqyxXH4a+zRQ=",
         "ref": "refs/heads/master",
-        "rev": "3dfd035bedf934bf8bd42ca1297db34a87e0c31d",
-        "revCount": 2085,
+        "rev": "9b6d532b8c6840e9e4e23e1c4f661b5ff4df4512",
+        "revCount": 2116,
         "type": "git",
         "url": "https://github.com/nix-community/nix-vscode-extensions.git"
       },
@@ -347,11 +347,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1771903837,
-        "narHash": "sha256-sdaqdnsQCv3iifzxwB22tUwN/fSHoN7j2myFW5EIkGk=",
+        "lastModified": 1775002709,
+        "narHash": "sha256-d3Yx83vSrN+2z/loBh4mJpyRqr9aAJqlke4TkpFmRJA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e764fc9a405871f1f6ca3d1394fb422e0a0c3951",
+        "rev": "bcd464ccd2a1a7cd09aa2f8d4ffba83b761b1d0e",
         "type": "github"
       },
       "original": {
@@ -363,11 +363,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1776329215,
-        "narHash": "sha256-a8BYi3mzoJ/AcJP8UldOx8emoPRLeWqALZWu4ZvjPXw=",
+        "lastModified": 1776949667,
+        "narHash": "sha256-GMSVw35Q+294GlrTUKlx087E31z7KurReQ1YHSKp5iw=",
         "ref": "nixpkgs-unstable",
-        "rev": "b86751bc4085f48661017fa226dee99fab6c651b",
-        "revCount": 981196,
+        "rev": "01fbdeef22b76df85ea168fbfe1bfd9e63681b30",
+        "revCount": 985930,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -411,27 +411,27 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1766025857,
-        "narHash": "sha256-Lav5jJazCW4mdg1iHcROpuXqmM94BWJvabLFWaJVJp0=",
+        "lastModified": 1777207419,
+        "narHash": "sha256-V3bmPWAajDiC+1ClDOp55gianW2EyRJSJOyu1RUQibc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "def3da69945bbe338c373fddad5a1bb49cf199ce",
+        "rev": "a7ecea3deccfbdbf22945a89984fcc5a169da8aa",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "def3da69945bbe338c373fddad5a1bb49cf199ce",
+        "rev": "a7ecea3deccfbdbf22945a89984fcc5a169da8aa",
         "type": "github"
       }
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1776434932,
-        "narHash": "sha256-gyqXNMgk3sh+ogY5svd2eNLJ6oEwzbAeaoBrrxD0lKk=",
+        "lastModified": 1777077449,
+        "narHash": "sha256-AIiMJiqvGrN4HyLEbKAoCSRRYn0rnlW5VbKNIMIYqm4=",
         "ref": "nixos-25.11",
-        "rev": "c7f47036d3df2add644c46d712d14262b7d86c0c",
-        "revCount": 911245,
+        "rev": "a4bf06618f0b5ee50f14ed8f0da77d34ecc19160",
+        "revCount": 911667,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -449,11 +449,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776679267,
-        "narHash": "sha256-SW3OGbLSo4w0Uh6wHfD5gYnvMRYwvKLW3EBX+TBHcA4=",
+        "lastModified": 1777269952,
+        "narHash": "sha256-mgi1SWm8gvbc5+Ds3CsSR2PdVQDJcd4LIgqrAR1vhQY=",
         "ref": "refs/heads/main",
-        "rev": "dd785f4fd2fdb039e8fe6c72a729912a0debc4ce",
-        "revCount": 42037,
+        "rev": "c7bf566f4d15389a44569565390acf5f7ff6d2e2",
+        "revCount": 42255,
         "type": "git",
         "url": "https://github.com/nix-community/NUR.git"
       },
@@ -507,11 +507,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776654897,
-        "narHash": "sha256-Vqi4AiJVCcBGn/RmBtRCgyH5rCxqm/w0xV9diJWF1Ic=",
+        "lastModified": 1777259803,
+        "narHash": "sha256-fIb/EoVu/1U0qVrE6qZCJ2WCfprRpywNIAVzKEACIQc=",
         "ref": "refs/heads/master",
-        "rev": "25d75be8139815a53560745fa060909777495105",
-        "revCount": 2149,
+        "rev": "a6cb2224d975e16b5e67de688c6ad306f7203425",
+        "revCount": 2156,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay.git"
       },
