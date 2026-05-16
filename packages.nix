@@ -48,9 +48,6 @@
     obs-studio
     teams-for-linux
     lm_sensors
-    pciutils
-    iw
-    inxi
     lshw
     docker-compose
     file
@@ -58,7 +55,6 @@
     perf
     lz4
     p7zip
-    lsof
     zip
     dolphin-emu-primehack
     unrar
@@ -74,9 +70,7 @@
     ntfs3g
     exiftool
     inetutils
-    gdu
     ocrmypdf
-    usbimager
     android-file-transfer
     mozjpeg
     uv
