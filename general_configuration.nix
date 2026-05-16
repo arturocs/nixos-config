@@ -226,7 +226,6 @@
   services.flatpak.uninstallUnmanaged = true;
   services.flatpak.packages = [
     "com.heroicgameslauncher.hgl"
-    "org.jdownloader.JDownloader"
     "io.dbeaver.DBeaverCommunity"
     "com.github.afrantzis.Bless"
     "com.github.tchx84.Flatseal"
