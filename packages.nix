@@ -84,7 +84,6 @@
     inputs.nix-software-center.packages.${system}.nix-software-center
     boxbuddy
     dolphin-emu-primehack
-    ghidra-bin
     android-file-transfer
   ];
 }
