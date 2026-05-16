@@ -280,6 +280,12 @@
     formatted = builtins.concatStringsSep "\n" sortedUnique;
   in
     formatted;
+  environment.etc."distrobox-init" = {
+    source = "${pkgs.distrobox}/bin/distrobox-init";
+  };
+  environment.sessionVariables = {
+    DISTROBOX_INIT_PATH = "/etc/distrobox-init";
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

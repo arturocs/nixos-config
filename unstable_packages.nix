@@ -12,8 +12,6 @@
     rmg
     mgba
     godot
-    distrobox
-    boxbuddy
     retroarch-assets
     retroarch-joypad-autoconfig
     bcachefs-tools

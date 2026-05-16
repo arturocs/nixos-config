@@ -80,5 +80,7 @@
     android-file-transfer
     mozjpeg
     uv
+    distrobox
+    boxbuddy
   ];
 }
