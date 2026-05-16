@@ -34,7 +34,6 @@
     htop
     wineWowPackages.stable
     ncdu
-    vdhcoapp
     (rust-bin.stable.latest.default.override {
       extensions = ["rust-src"];
     })
