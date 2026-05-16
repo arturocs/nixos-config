@@ -5,6 +5,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs-unstable; [
+    # Emulators
     melonds
     pcsx2
     dolphin-emu
@@ -14,12 +15,6 @@
     godot
     retroarch-assets
     retroarch-joypad-autoconfig
-    cura-appimage
-    hydralauncher
-    orca-slicer
-    antigravity-fhs
-    lmstudio
-    dwarfs
     (retroarch.withCores (
       cores:
         with libretro; [
@@ -38,6 +33,9 @@
           parallel-n64
         ]
     ))
+
+    # Development tools
+    antigravity-fhs
     (vscode-with-extensions.override
       {
         vscodeExtensions =
@@ -66,5 +64,14 @@
           ++ (with open-vsx; [
             ]);
       })
+
+    # Slicers
+    orca-slicer
+    cura-appimage
+
+    # Other packages
+    hydralauncher
+    lmstudio
+    dwarfs
   ];
 }
