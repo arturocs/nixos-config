@@ -22,7 +22,7 @@
     uv
     gh
 
-    # Office 
+    # Office
     libreoffice-qt
     hunspell
     hunspellDicts.es_ES
@@ -61,7 +61,7 @@
     blender
     obs-studio
 
-    # Internet 
+    # Internet
     telegram-desktop
     chromium
     discord
@@ -69,7 +69,7 @@
     teams-for-linux
     freetube
     transmission_4-qt6
-    
+
     # KDE applications
     kdePackages.kate
     kdePackages.kdenlive
