@@ -13,8 +13,6 @@
     })
     nodePackages_latest.nodejs
     gimp
-    gcc
-    llvmPackages.libcxxClang
     typora
     telegram-desktop
     libreoffice-qt
