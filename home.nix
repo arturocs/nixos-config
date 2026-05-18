@@ -92,7 +92,6 @@
 
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts = [pkgs.vdhcoapp];
     languagePacks = ["es-ES"];
     profiles = {
       arturo = {

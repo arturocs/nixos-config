@@ -34,7 +34,6 @@
     wget
     htop
     ncdu
-    neofetch
     squashfsTools
     lm_sensors
     lshw
