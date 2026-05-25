@@ -2,9 +2,9 @@
   description = "My flake";
 
   inputs = {
-    nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?ref=nixos-25.11";
+    nixpkgs.url = "git+https://github.com/NixOS/nixpkgs.git?ref=release-26.05";
     nixpkgs-unstable.url = "git+https://github.com/NixOS/nixpkgs.git?ref=nixpkgs-unstable";
-    home-manager.url = "git+https://github.com/nix-community/home-manager.git?ref=release-25.11";
+    home-manager.url = "git+https://github.com/nix-community/home-manager.git?ref=master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur = {
       url = "git+https://github.com/nix-community/NUR.git";
@@ -21,8 +21,8 @@
     };
     nix-flatpak.url = "git+https://github.com/gmodena/nix-flatpak.git?ref=refs/tags/latest";
     autofirma-nix = {
-      #url = "git+https://github.com/nix-community/autofirma-nix.git";
-      url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.11";
+      url = "git+https://github.com/nix-community/autofirma-nix.git";
+      #url = "git+https://github.com/nix-community/autofirma-nix.git?ref=release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

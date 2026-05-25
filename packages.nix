@@ -13,7 +13,7 @@
     (rust-bin.stable.latest.default.override {
       extensions = ["rust-src"];
     })
-    nodePackages_latest.nodejs
+    nodejs_latest
     alejandra
     docker-compose
     nvidia-container-toolkit

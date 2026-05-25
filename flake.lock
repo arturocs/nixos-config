@@ -13,16 +13,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1776853481,
-        "narHash": "sha256-3BrnLtIJC7xdkJec3e0NPTcJ43Tiapl3zdEg8GZ7px4=",
-        "ref": "release-25.11",
-        "rev": "cc047cc101438dda5b1ab7a5fe7e28bf6f79bfce",
-        "revCount": 466,
+        "lastModified": 1779686316,
+        "narHash": "sha256-yx78BzxmDL8UTB7SauUjydpXRoRDeisw7Y66eLfzq3Q=",
+        "ref": "refs/heads/main",
+        "rev": "cd8112c77af910fad6c8e978667fca4bbf2d342b",
+        "revCount": 616,
         "type": "git",
         "url": "https://github.com/nix-community/autofirma-nix.git"
       },
       "original": {
-        "ref": "release-25.11",
         "type": "git",
         "url": "https://github.com/nix-community/autofirma-nix.git"
       }
@@ -30,16 +29,16 @@
     "autofirma-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1716805628,
-        "narHash": "sha256-GQyj3QuWIHTkYwdJ4oKVsG923YG9mCUXfhqdIvEWNMA=",
+        "lastModified": 1747811913,
+        "narHash": "sha256-vk0I2wpaiwC5kY8R36i/1CLHGCtsl3scDcJ6qg1p50k=",
         "owner": "ctt-gob-es",
         "repo": "clienteafirma",
-        "rev": "f8888062394a4ca41c5802beb2524597a5ce465a",
+        "rev": "1f29aa7a2aae8eda40a70fed79b0428153c78df8",
         "type": "github"
       },
       "original": {
         "owner": "ctt-gob-es",
-        "ref": "v1.8.3",
+        "ref": "v1.9",
         "repo": "clienteafirma",
         "type": "github"
       }
@@ -47,16 +46,16 @@
     "clienteafirma-external-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1712248159,
-        "narHash": "sha256-iS3I6zIxuKG133s/FqDlXZzOZ2ZOJcqZK9X6Tv3+3lc=",
+        "lastModified": 1753702371,
+        "narHash": "sha256-3bXdZ6fQAId6nHqiJ60BDBhFI9cosN7jtI0soggcO9Q=",
         "owner": "ctt-gob-es",
         "repo": "clienteafirma-external",
-        "rev": "f450ac76094ffe387f6590b9ac61b5ada5a501e7",
+        "rev": "d3792cc3816906da7fff652f9bd122f84b29b5c7",
         "type": "github"
       },
       "original": {
         "owner": "ctt-gob-es",
-        "ref": "OT_14395",
+        "ref": "v1.0.6",
         "repo": "clienteafirma-external",
         "type": "github"
       }
@@ -84,11 +83,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775087534,
-        "narHash": "sha256-91qqW8lhL7TLwgQWijoGBbiD4t7/q75KTi8NxjVmSmA=",
+        "lastModified": 1778716662,
+        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "3107b77cd68437b9a76194f0f7f9c55f2329ca5b",
+        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
         "type": "github"
       },
       "original": {
@@ -123,16 +122,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1775425411,
-        "narHash": "sha256-KY6HsebJHEe5nHOWP7ur09mb0drGxYSzE3rQxy62rJo=",
+        "lastModified": 1779336838,
+        "narHash": "sha256-n1+l78hJRABp4cQHKeD0BVByT0vZLPqd09Tvoq8Q+d8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0d02ec1d0a05f88ef9e74b516842900c41f0f2fe",
+        "rev": "928d72376949e222ea4f07b44828a55b0136422e",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-25.11",
         "repo": "home-manager",
         "type": "github"
       }
@@ -144,16 +142,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1778905220,
-        "narHash": "sha256-ox/5IHc8uwy6UTw6N7Shp6uCHIgu/S2PsWeuXsOHSo8=",
-        "ref": "release-25.11",
-        "rev": "d1686dc7d36cbd1234cb226ad6ef97e882716acb",
-        "revCount": 5887,
+        "lastModified": 1779678629,
+        "narHash": "sha256-gHcIFg0mm+KFsg7iZQt67kni3+qR5U3PhEC9P7vKlZ4=",
+        "ref": "master",
+        "rev": "612bbe3b405ad5f71d7bf9edecc04b678a061652",
+        "revCount": 6793,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
       },
       "original": {
-        "ref": "release-25.11",
+        "ref": "master",
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
       }
@@ -161,16 +159,16 @@
     "jmulticard-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1686816513,
-        "narHash": "sha256-sCqMK4FvwRHsGIB6iQVyqrx0+EDiUfQSAsPqmDq2Giw=",
+        "lastModified": 1753703143,
+        "narHash": "sha256-XHX9MwWQe9BIjEfrrquU9gtzx3x6leGBhWjMPmVtALE=",
         "owner": "ctt-gob-es",
         "repo": "jmulticard",
-        "rev": "9983fc690f3b68dc2c8fde19db269766cf0fb387",
+        "rev": "2550e7eab43b9089673d0989959894846425f499",
         "type": "github"
       },
       "original": {
         "owner": "ctt-gob-es",
-        "ref": "v1.8",
+        "ref": "v2.0",
         "repo": "jmulticard",
         "type": "github"
       }
@@ -276,10 +274,6 @@
     },
     "nix-unit": {
       "inputs": {
-        "flake-parts": [
-          "autofirma-nix",
-          "flake-parts"
-        ],
         "nix-github-actions": "nix-github-actions",
         "nixpkgs": [
           "autofirma-nix",
@@ -288,11 +282,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1762774186,
-        "narHash": "sha256-hRADkHjNt41+JUHw2EiSkMaL4owL83g5ZppjYUdF/Dc=",
+        "lastModified": 1779338171,
+        "narHash": "sha256-affUbv/bwE8SLGhuWKniDr7SVO+Lo1XEPjCZdyU5kgQ=",
         "owner": "nix-community",
         "repo": "nix-unit",
-        "rev": "1c9ab50554eed0b768f9e5b6f646d63c9673f0f7",
+        "rev": "6ab1f232562a01d18b40d5ed6a58718c4f3a74bc",
         "type": "github"
       },
       "original": {
@@ -306,11 +300,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1778902753,
-        "narHash": "sha256-4tgJmu6sc6F6y+igJfh+kG0t2U1T2cDwfhz5hC0W2Tg=",
+        "lastModified": 1779682708,
+        "narHash": "sha256-aoE8cutHZ2Eebda3dJABGw+NP9s0jOiEb/5nchqixy4=",
         "ref": "refs/heads/master",
-        "rev": "5df06838c483ad33aa5fb1448b9ba9de665930a1",
-        "revCount": 2135,
+        "rev": "62db28055221a02b7d60750c47c4b54df5afc035",
+        "revCount": 2144,
         "type": "git",
         "url": "https://github.com/nix-community/nix-vscode-extensions.git"
       },
@@ -347,27 +341,27 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1775002709,
-        "narHash": "sha256-d3Yx83vSrN+2z/loBh4mJpyRqr9aAJqlke4TkpFmRJA=",
+        "lastModified": 1778443072,
+        "narHash": "sha256-zi7/fsqM/kFdNuED//4WOCUtezGtKKqRNORjMvfwjnA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bcd464ccd2a1a7cd09aa2f8d4ffba83b761b1d0e",
+        "rev": "da5ad661ba4e5ef59ba743f0d112cbc30e474f32",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-25.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1778794387,
-        "narHash": "sha256-BL04pOS9453Awkeb9f90XBJXBSkWxN+vB7HIgnL0iMM=",
+        "lastModified": 1779536132,
+        "narHash": "sha256-q+fF42iv/geEbHfgSzy3tS0FF/EyD6XTZ98E6yxiBO8=",
         "ref": "nixpkgs-unstable",
-        "rev": "8a1b0127302ea51e05bf4ea5a291743fac442406",
-        "revCount": 998133,
+        "rev": "3d8f0f3f72a6cd4d93d0ad13203f2ea1cb7e1456",
+        "revCount": 1003764,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -427,16 +421,16 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1778737229,
-        "narHash": "sha256-6xWoytx8jFW4PF1GjRm/i/53trbpKGfz6zjzQGBr4cI=",
-        "ref": "nixos-25.11",
-        "rev": "d7a713c0b7e47c908258e71cba7a2d77cc8d71d5",
-        "revCount": 912657,
+        "lastModified": 1779700811,
+        "narHash": "sha256-CSz2REOr0e8QKKydWQ+e0HiCjrUfrJTauvf65Rvh1Yw=",
+        "ref": "release-26.05",
+        "rev": "632e240fd5f18d9a6f0e326085c407d4940784b2",
+        "revCount": 1004396,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
       "original": {
-        "ref": "nixos-25.11",
+        "ref": "release-26.05",
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       }
@@ -449,11 +443,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778935355,
-        "narHash": "sha256-xkNNhzZB2QVT1cj5X5ZtbIvlrJsvLcUE9PbOZd00cGs=",
+        "lastModified": 1779706600,
+        "narHash": "sha256-wJavqTAK4nc65cKJyf9+Mp9TO/3chlEjPoM8j13y5kw=",
         "ref": "refs/heads/main",
-        "rev": "cce9ab49427c01a146369674ef79e160c785ae4f",
-        "revCount": 43040,
+        "rev": "700b537fed556cf2a17800f803613b397aa405af",
+        "revCount": 43247,
         "type": "git",
         "url": "https://github.com/nix-community/NUR.git"
       },
@@ -507,11 +501,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778901358,
-        "narHash": "sha256-n35a8GOPs8zi35GXPe4uBz0Y8xseTkQpNgcrq81gPg0=",
+        "lastModified": 1779679233,
+        "narHash": "sha256-qSIAAfK66X6waos6alIYxVze1ZU3C/WPp7NlN4ooP54=",
         "ref": "refs/heads/master",
-        "rev": "61ec6a4fc56fe0c2b863f7b3eaba07b6664697d9",
-        "revCount": 2175,
+        "rev": "47ab6c7b3c6a68beac60067490240efa32ae344c",
+        "revCount": 2184,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay.git"
       },
@@ -544,11 +538,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762410071,
-        "narHash": "sha256-aF5fvoZeoXNPxT0bejFUBXeUjXfHLSL7g+mjR/p5TEg=",
+        "lastModified": 1775636079,
+        "narHash": "sha256-pc20NRoMdiar8oPQceQT47UUZMBTiMdUuWrYu2obUP0=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "97a30861b13c3731a84e09405414398fbf3e109f",
+        "rev": "790751ff7fd3801feeaf96d7dc416a8d581265ba",
         "type": "github"
       },
       "original": {

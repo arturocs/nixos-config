@@ -24,7 +24,7 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
   boot.tmp.cleanOnBoot = true;
   boot.kernel.sysfs.module.zswap.parameters = {
-    enabled = true;
+    enabled = false;
     compressor = "lz4";
     #zpool = cfg.zpool;
     max_pool_percent = 30;
@@ -256,7 +256,7 @@
   services.openssh.enable = true;
 
   zramSwap = {
-    enable = false;
+    enable = true;
     algorithm = "lz4";
   };
 
