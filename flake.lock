@@ -142,11 +142,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779678629,
-        "narHash": "sha256-gHcIFg0mm+KFsg7iZQt67kni3+qR5U3PhEC9P7vKlZ4=",
+        "lastModified": 1779726696,
+        "narHash": "sha256-/p37CB5n6Wpw250b0Lq0CYwNq2D8uGKzDoBulyLcQqA=",
         "ref": "master",
-        "rev": "612bbe3b405ad5f71d7bf9edecc04b678a061652",
-        "revCount": 6793,
+        "rev": "1a95e2efb477959b70b4a14c51035975c0481df6",
+        "revCount": 6795,
         "type": "git",
         "url": "https://github.com/nix-community/home-manager.git"
       },
@@ -300,11 +300,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1779682708,
-        "narHash": "sha256-aoE8cutHZ2Eebda3dJABGw+NP9s0jOiEb/5nchqixy4=",
+        "lastModified": 1779768227,
+        "narHash": "sha256-SHhLHc98axThWDxCaxUR+SvaHrQdsdPEra17yK8wekM=",
         "ref": "refs/heads/master",
-        "rev": "62db28055221a02b7d60750c47c4b54df5afc035",
-        "revCount": 2144,
+        "rev": "e2249de32bc637774f9a1711a7c1b292126a3fa7",
+        "revCount": 2145,
         "type": "git",
         "url": "https://github.com/nix-community/nix-vscode-extensions.git"
       },
@@ -357,11 +357,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1779536132,
-        "narHash": "sha256-q+fF42iv/geEbHfgSzy3tS0FF/EyD6XTZ98E6yxiBO8=",
+        "lastModified": 1779694939,
+        "narHash": "sha256-Ly4j75O8ICaSQx3uxPnwk2x7PMF0XQvn5r0c3yBA7FI=",
         "ref": "nixpkgs-unstable",
-        "rev": "3d8f0f3f72a6cd4d93d0ad13203f2ea1cb7e1456",
-        "revCount": 1003764,
+        "rev": "f9d8b65950353691ab56561e7c73d2e1063d810b",
+        "revCount": 1004746,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -421,11 +421,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1779700811,
-        "narHash": "sha256-CSz2REOr0e8QKKydWQ+e0HiCjrUfrJTauvf65Rvh1Yw=",
+        "lastModified": 1779775534,
+        "narHash": "sha256-dc17TRXSiFudWSxlRMo1iLz9peaM5k3tcsYijjU7Ohk=",
         "ref": "release-26.05",
-        "rev": "632e240fd5f18d9a6f0e326085c407d4940784b2",
-        "revCount": 1004396,
+        "rev": "0c739c25659e3565340dccc45a8b2eee52e7b9a2",
+        "revCount": 1004535,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -443,11 +443,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779706600,
-        "narHash": "sha256-wJavqTAK4nc65cKJyf9+Mp9TO/3chlEjPoM8j13y5kw=",
+        "lastModified": 1779774087,
+        "narHash": "sha256-Rglzy0bNXnUiyNZq1oqa4nIKV3+KqUw7tblgsXBiGW0=",
         "ref": "refs/heads/main",
-        "rev": "700b537fed556cf2a17800f803613b397aa405af",
-        "revCount": 43247,
+        "rev": "4bd7db4dd66fa71ed249bb41a62e8bf63e985f8a",
+        "revCount": 43279,
         "type": "git",
         "url": "https://github.com/nix-community/NUR.git"
       },
@@ -501,11 +501,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779679233,
-        "narHash": "sha256-qSIAAfK66X6waos6alIYxVze1ZU3C/WPp7NlN4ooP54=",
+        "lastModified": 1779765539,
+        "narHash": "sha256-2QxuD5gJcfCFsnqv54LGEHQKvd+K+DW/ecERwAvuA7w=",
         "ref": "refs/heads/master",
-        "rev": "47ab6c7b3c6a68beac60067490240efa32ae344c",
-        "revCount": 2184,
+        "rev": "09889992e640378f7008c3302b9d4892579df610",
+        "revCount": 2185,
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay.git"
       },
