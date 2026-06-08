@@ -78,7 +78,7 @@
     kdePackages.kfind
 
     # Others
-    wineWowPackages.stable
+    wineWow64Packages.stable
     pcmanfm
     inputs.nix-software-center.packages.${system}.nix-software-center
     boxbuddy

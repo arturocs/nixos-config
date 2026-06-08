@@ -91,6 +91,7 @@
   programs.home-manager.enable = true;
 
   programs.firefox = {
+    configPath = ".mozilla/firefox";
     enable = true;
     languagePacks = ["es-ES"];
     profiles = {
