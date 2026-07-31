@@ -35,7 +35,7 @@
     ))
 
     # Development tools
-    antigravity-fhs
+    antigravity-ide-fhs
     opencode-desktop
     (vscode-with-extensions.override
       {
