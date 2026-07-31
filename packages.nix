@@ -80,6 +80,9 @@
     # Slicers
     orca-slicer
 
+    # Open source games
+    pingus
+    supertux
 
     # Others
     wineWow64Packages.stable
