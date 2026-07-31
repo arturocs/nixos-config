@@ -77,9 +77,6 @@
     kdePackages.kalk
     kdePackages.kfind
 
-    # Slicers
-    orca-slicer
-
     # Open source games
     pingus
     supertux

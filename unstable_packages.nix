@@ -67,6 +67,7 @@
       })
 
     # Slicers
+    orca-slicer
     cura-appimage
 
     # Other packages
