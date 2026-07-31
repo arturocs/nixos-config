@@ -77,6 +77,10 @@
     kdePackages.kalk
     kdePackages.kfind
 
+    # Slicers
+    orca-slicer
+
+
     # Others
     wineWow64Packages.stable
     pcmanfm
