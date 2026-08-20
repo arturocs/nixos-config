@@ -73,6 +73,5 @@
     # Other packages
     hydralauncher
     lmstudio
-    dwarfs
   ];
 }
