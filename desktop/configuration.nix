@@ -85,15 +85,16 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = pkgs.linuxKernel.packages.linux_6_18.nvidia_x11;
+    #package = pkgs.linuxKernel.packages.linux_6_18.nvidia_x11;
     #package = pkgs.linuxPackages_latest.nvidia_x11;
     #package = pkgs-unstable.linuxPackages_latest.nvidia_x11;
-    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    #   version = "590.48.01";
-    #   sha256_64bit = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
-    #   openSha256 = "sha256-hECHfguzwduEfPo5pCDjWE/MjtRDhINVr4b1awFdP44=";
-    #   settingsSha256 = "sha256-4SfCWp3swUp+x+4cuIZ7SA5H7/NoizqgPJ6S9fm90fA=";
-    #   persistencedSha256 = "";
-    # };
+    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+      version = "610.57.04";
+      sha256_64bit = "sha256-suk1xmuDuwDAyFe8jg7g/VLekoa0DJzB7sKafOfrEW0=";
+      sha256_aarch64 = "sha256-QCefrMBCmpOwuOyXv1k5Gj0iB2CYlPgnG3JToUw/j54=";
+      openSha256 = "sha256-rQHOOOY4KL92Ww3KDwh+j4eGU7oNAH8LutZC5wmFnPo=";
+      settingsSha256 = "sha256-ZEMo8I8Zc2Tq6RVDNYpAH+f094dUaZiBqO+5f6lIjRI=";
+      persistencedSha256 = "sha256-aXmD2VY1RLlgAnlHhOUMWzvMyhI6JTClcFLm4imF/mA=";
+    };
   };
 }

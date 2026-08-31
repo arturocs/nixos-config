@@ -21,8 +21,8 @@
     ./plasma_overlay.nix
   ];
   #boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
   boot.tmp.cleanOnBoot = true;
   boot.kernel.sysfs.module.zswap.parameters = {
     enabled = false;
