@@ -27,11 +27,4 @@ in {
     options = ["nofail"];
     depends = ["/hdd"];
   };
-
-  fileSystems."/home/arturo/Escritorio/UDo3/backups_real_prod" = {
-    device = "${dwarfs}/hdd/backups_real_prod.dwarfs";
-    fsType = "fuse";
-    options = ["nofail" "allow_other" "ro" "default_permissions" "uid=1000" "gid=100"];
-    depends = ["/hdd"];
-  };
 }
