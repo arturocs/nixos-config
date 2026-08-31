@@ -53,7 +53,6 @@
     ocrmypdf
     distrobox
     inputs.nix-alien.packages.${system}.nix-alien
-    dwarfs
 
     # Multimedia
     gimp

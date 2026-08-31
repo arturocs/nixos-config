@@ -1,5 +1,5 @@
-{pkgs, ...}: let
-  dwarfs = "${pkgs.dwarfs}/bin/dwarfs#";
+{pkgs-unstable, ...}: let
+  dwarfs = "${pkgs-unstable.dwarfs}/bin/dwarfs#";
 in {
   fileSystems."/hdd" = {
     device = "/dev/sda2";
