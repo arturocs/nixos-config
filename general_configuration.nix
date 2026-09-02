@@ -161,8 +161,18 @@
     };
   };
 
-  # Hacky fix to autofirma error
-  environment.etc."AutoFirma/autofirma.pfx".source = "/home/arturo/.afirma/AutoFirma/autofirma.pfx";
+  # Fix AF200801: create-autofirma-cert.service genera autofirma.pfx con permisos 0600 root:root
+  # (bug upstream https://github.com/nix-community/autofirma-nix/issues/986, PR #987 sin mergear),
+  # por lo que el usuario no puede leerlo al firmar desde el navegador.
+  systemd.services."create-autofirma-cert".serviceConfig.ExecStartPost = "${pkgs.coreutils}/bin/chmod 644 /etc/Autofirma/autofirma.pfx";
+
+  # Fix "no aparecen certificados": AutoFirma prioriza ~/.config/mozilla/firefox/profiles.ini
+  # (Firefox >=147) sobre ~/.mozilla/firefox/profiles.ini, y puede quedarse con un perfil
+  # huerfano vacio ahi. Forzamos el profiles.ini real vía las variables que lee clienteafirma.
+  environment.sessionVariables = {
+    AFIRMA_NSS_PROFILES_INI = "/home/arturo/.mozilla/firefox/profiles.ini";
+    "es.gob.afirma.keystores.mozilla.UseEnvironmentVariables" = "true";
+  };
 
   programs.java.enable = true;
   networking.extraHosts = "127.0.0.1 release.gitkraken.com";
