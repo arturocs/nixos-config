@@ -28,6 +28,8 @@
     hunspell
     hunspellDicts.es_ES
     hunspellDicts.en_US
+    hyphenDicts.es_ES
+    hyphenDicts.en_US
     onlyoffice-desktopeditors
     typora
 
