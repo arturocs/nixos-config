@@ -72,7 +72,6 @@
 
     # Other packages
     hydralauncher
-    lmstudio
     dwarfs
     unsloth-desktop
   ];
