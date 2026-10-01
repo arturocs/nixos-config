@@ -174,7 +174,10 @@
     "es.gob.afirma.keystores.mozilla.UseEnvironmentVariables" = "true";
   };
 
-  programs.java.enable = true;
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk25;
+  };
   networking.extraHosts = "127.0.0.1 release.gitkraken.com";
 
   programs.nh = {
