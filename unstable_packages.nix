@@ -74,5 +74,6 @@
     hydralauncher
     lmstudio
     dwarfs
+    unsloth-desktop
   ];
 }
