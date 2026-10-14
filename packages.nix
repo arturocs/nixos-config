@@ -22,6 +22,7 @@
     postman
     uv
     gh
+    maven
 
     # Office
     libreoffice-qt

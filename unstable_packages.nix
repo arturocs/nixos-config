@@ -37,6 +37,7 @@
     # Development tools
     antigravity-ide-fhs
     opencode-desktop
+    intellij-idea
     (vscode-with-extensions.override
       {
         vscodeExtensions =
