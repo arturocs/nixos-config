@@ -98,6 +98,7 @@
       arturo = {
         settings = {
           "browser.translations.enable" = false;
+          "dom.webgpu.enabled" = true;
           "widget.use-xdg-desktop-portal.file-picker" = 1;
         };
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
