@@ -103,7 +103,7 @@
         };
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
-          i-dont-care-about-cookies
+          istilldontcareaboutcookies
           darkreader
           video-downloadhelper
           cookie-autodelete
