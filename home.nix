@@ -106,7 +106,7 @@
           istilldontcareaboutcookies
           darkreader
           video-downloadhelper
-          cookie-autodelete
+          #cookie-autodelete
           plasma-integration
           facebook-container
           toxcancel
