@@ -94,5 +94,6 @@
     android-file-transfer
     qemu_kvm
     quickemu
+    bubblewrap
   ];
 }
