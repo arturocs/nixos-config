@@ -6,7 +6,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     # Development tools
-    (python314.override {
+    (python315.override {
       enableOptimizations = true;
       reproducibleBuild = false;
     })
