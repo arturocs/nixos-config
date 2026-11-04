@@ -1,3 +1,73 @@
+# Automatic flake updates
+#
+# The `Update flake lock` GitHub Actions workflow runs daily at 03:17 UTC
+# and can also be started manually from the Actions tab. Scheduled runs may
+# be delayed by GitHub.
+#
+# It runs `nix flake update`, discovers every entry in `nixosConfigurations`,
+# and builds each configuration's `config.system.build.toplevel`. It commits
+# only `flake.lock` to the default branch after all builds succeed, and only
+# when the lock file changed. Failed updates or builds leave the branch unchanged.
+# This verifies builds, not booting or runtime behavior.
+#
+# Before installing Nix, the workflow creates a preallocated Btrfs image with
+# `compress=zstd:3`. Its size is the available space on the runner's temporary
+# filesystem minus 6 GiB reserved for host logs and Actions cache archives.
+# It fails early if fewer than 4 GiB remain for the image. Preallocation keeps
+# the image from growing into the host reserve; it does not add physical disk
+# capacity. Zstd level 3 provides a starting balance of compression and CPU
+# cost; already-compressed data such as Git packfiles may shrink very little.
+#
+# The image is mounted at `/mnt/nix-ci`. Separate directories are bind-mounted
+# at `/nix` and `$XDG_CACHE_HOME`, while Nix builds use `/mnt/nix-ci/build`.
+# The store, Git cache, and build temporaries therefore share compressed space
+# without putting the Git cache or build temporaries in the store archive.
+# Only directory contents are cached, never the image file. Mounts remain
+# available through all action post-steps until the ephemeral runner is removed.
+# The setup requires passwordless sudo, loop devices, and Btrfs kernel support
+# on the Ubuntu runner. No preinstalled toolchains are removed.
+#
+# Nix automatically attempts garbage collection below 1 GiB of free space,
+# aiming for 3 GiB free when enough unreferenced paths can be deleted. This
+# cannot remove live dependencies or guarantee that a build fits. Disk usage
+# is reported after mounting and at the end of the job, including on failure.
+#
+# Nix's Git repository caches (`$XDG_CACHE_HOME/nix/gitv*`) are restored with
+# GitHub Actions cache before updating inputs, allowing incremental Git fetches.
+# Each run saves a new cache immediately after a successful update, even if a
+# later build fails. Cache keys are unique per run because Actions caches are
+# immutable; a shared restore prefix selects the most recently created cache.
+# The first run, or a run after cache eviction, still downloads repositories
+# from scratch. Actions transfers the whole cache archive, so this is not
+# guaranteed to be faster than fetching GitHub tarballs.
+#
+# The Nix store is cached separately using `nix-community/cache-nix-action`,
+# which handles both store paths and the Nix database. Each configuration is
+# built with its own result symlink under `$RUNNER_TEMP/nixos-results`, making
+# all current system outputs garbage collection roots. After every system
+# build succeeds, `nix store gc` removes unreferenced paths before the store
+# is saved under a new cache key. Failed builds do not save a new store cache.
+#
+# Result symlinks are outside the cached `/nix` directory, so previous runs'
+# system outputs do not remain rooted on a fresh runner. No NixOS generations
+# are installed. Garbage collection retains the current systems' runtime
+# closures and other live roots required by the Nix installation. It does not
+# retain derivations or build-only dependencies solely to accelerate rebuilds
+# (`keep-derivations` and `keep-outputs` are disabled during collection).
+#
+# This bounds the saved store to live roots, not to a fixed number of bytes:
+# the current systems can still be large. Old GitHub cache archives are
+# subject to GitHub's retention and quota eviction policies. Restoring and
+# saving the entire store also adds transfer time and requires disk space.
+#
+# The workflow uses the built-in `GITHUB_TOKEN` with `contents: write`; no
+# additional secret is required. Repository policies must allow Actions to
+# push to the default branch. Branch protection requiring pull requests will
+# block this direct-commit workflow.
+#
+# Full desktop builds may exceed a hosted runner's available disk space or
+# the six-hour job limit. In that case, use a larger or self-hosted runner.
+
 name: Update flake lock
 
 on:
