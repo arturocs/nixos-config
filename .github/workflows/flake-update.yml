@@ -27,8 +27,42 @@ jobs:
         with:
           ref: ${{ github.event.repository.default_branch }}
 
+      - name: Prepare compressed Btrfs volume
+        run: |
+          if [[ -e /nix/store ]] || mountpoint -q /nix; then
+            echo "::error::The Btrfs volume must be prepared before Nix is installed."
+            exit 1
+          fi
+          sudo -n apt-get update
+          sudo -n apt-get install --yes --no-install-recommends btrfs-progs
+          available_bytes="$(df --output=avail -B1 "$RUNNER_TEMP" | tail -n 1)"
+          image_bytes=$((available_bytes - 6 * 1024 * 1024 * 1024))
+          if (( image_bytes < 4 * 1024 * 1024 * 1024 )); then
+            echo "::error::Insufficient disk space for Btrfs while reserving 6 GiB for the host."
+            exit 1
+          fi
+          image="$RUNNER_TEMP/nix-ci.btrfs"
+          fallocate --length "$image_bytes" "$image"
+          mkfs.btrfs --label nix-ci "$image"
+          sudo -n mkdir -p /mnt/nix-ci /nix "$XDG_CACHE_HOME"
+          sudo -n mount -o loop,compress=zstd:3,noatime "$image" /mnt/nix-ci
+          sudo -n mkdir -p /mnt/nix-ci/nix /mnt/nix-ci/git-cache /mnt/nix-ci/build
+          sudo -n chown "$(id -u):$(id -g)" /mnt/nix-ci/git-cache
+          sudo -n chmod 1777 /mnt/nix-ci/build
+          sudo -n mount --bind /mnt/nix-ci/nix /nix
+          sudo -n mount --bind /mnt/nix-ci/git-cache "$XDG_CACHE_HOME"
+          df -h "$RUNNER_TEMP" /nix "$XDG_CACHE_HOME"
+          sudo -n btrfs filesystem usage /mnt/nix-ci
+
       - name: Install Nix
         uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            build-dir = /mnt/nix-ci/build
+            min-free = 1073741824
+            max-free = 3221225472
+            keep-derivations = false
+            keep-outputs = false
 
       - name: Restore Nix store
         id: store-cache
@@ -86,3 +120,11 @@ jobs:
           git add flake.lock
           git commit -m "chore: update flake.lock"
           git push origin "HEAD:${{ github.event.repository.default_branch }}"
+
+      - name: Report disk usage
+        if: always()
+        run: |
+          df -h "$RUNNER_TEMP"
+          if mountpoint -q /mnt/nix-ci; then
+            sudo -n btrfs filesystem usage /mnt/nix-ci
+          fi
