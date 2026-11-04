@@ -16,6 +16,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    env:
+      XDG_CACHE_HOME: /tmp/nix-cache
     defaults:
       run:
         shell: bash
@@ -28,8 +30,23 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
 
+      - name: Restore Nix Git repositories
+        id: git-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.XDG_CACHE_HOME }}/nix/gitv*
+          key: ${{ runner.os }}-nix-git-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            ${{ runner.os }}-nix-git-v1-
+
       - name: Update flake inputs
         run: nix flake update
+
+      - name: Save updated Nix Git repositories
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.XDG_CACHE_HOME }}/nix/gitv*
+          key: ${{ steps.git-cache.outputs.cache-primary-key }}
 
       - name: Build every NixOS configuration
         run: |
