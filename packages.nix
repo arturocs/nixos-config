@@ -54,7 +54,7 @@
     mozjpeg
     ocrmypdf
     distrobox
-    inputs.nix-alien.packages.${system}.nix-alien
+    inputs.nix-alien.packages.${pkgs.stdenv.hostPlatform.system}.nix-alien
 
     # Multimedia
     gimp
@@ -87,7 +87,7 @@
     # Others
     wineWow64Packages.stable
     pcmanfm
-    inputs.nix-software-center.packages.${system}.nix-software-center
+    inputs.nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.nix-software-center
     boxbuddy
     dolphin-emu-primehack
     android-file-transfer
