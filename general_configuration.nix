@@ -238,14 +238,10 @@
   services.flatpak.uninstallUnmanaged = true;
   services.flatpak.packages = [
     "com.heroicgameslauncher.hgl"
-    "io.dbeaver.DBeaverCommunity"
     "com.github.afrantzis.Bless"
     "com.github.tchx84.Flatseal"
     "com.stremio.Stremio"
     "org.frozen_bubble.frozen-bubble"
-    "com.zquestclassic.ZQuest"
-    "io.github.mlm_games.plutonic"
-    "net.veloren.veloren"
   ];
   services.lvm.enable = false;
 

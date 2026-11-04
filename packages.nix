@@ -22,7 +22,6 @@
     postman
     uv
     gh
-    maven
 
     # Office
     libreoffice-qt
@@ -92,8 +91,6 @@
     boxbuddy
     dolphin-emu-primehack
     android-file-transfer
-    qemu_kvm
-    quickemu
     bubblewrap
   ];
 }
