@@ -30,6 +30,14 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
 
+      - name: Restore Nix store
+        id: store-cache
+        uses: nix-community/cache-nix-action/restore@v7
+        with:
+          primary-key: ${{ runner.os }}-nix-store-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-prefixes-first-match: |
+            ${{ runner.os }}-nix-store-v1-
+
       - name: Restore Nix Git repositories
         id: git-cache
         uses: actions/cache/restore@v4
@@ -52,11 +60,20 @@ jobs:
         run: |
           configurations="$(nix eval --no-update-lock-file --json .#nixosConfigurations --apply builtins.attrNames)"
           mapfile -t systems < <(jq -r '.[]' <<< "$configurations")
+          mkdir -p "$RUNNER_TEMP/nixos-results"
           for system in "${systems[@]}"; do
             echo "::group::Build $system"
-            nix build --no-update-lock-file --no-link --print-build-logs ".#nixosConfigurations.${system}.config.system.build.toplevel"
+            nix build --no-update-lock-file --out-link "$RUNNER_TEMP/nixos-results/$system" --print-build-logs ".#nixosConfigurations.${system}.config.system.build.toplevel"
             echo "::endgroup::"
           done
+
+      - name: Collect unused Nix store paths
+        run: nix store gc --option keep-derivations false --option keep-outputs false
+
+      - name: Save cleaned Nix store
+        uses: nix-community/cache-nix-action/save@v7
+        with:
+          primary-key: ${{ steps.store-cache.outputs.primary-key }}
 
       - name: Commit validated lock file
         run: |
