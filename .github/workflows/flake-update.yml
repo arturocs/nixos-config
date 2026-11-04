@@ -63,6 +63,7 @@ jobs:
             max-free = 3221225472
             keep-derivations = false
             keep-outputs = false
+            http2 = false
 
       - name: Restore Nix store
         id: store-cache
