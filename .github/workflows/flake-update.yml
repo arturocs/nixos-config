@@ -48,7 +48,7 @@ jobs:
           sudo -n mount -o loop,compress=zstd:3,noatime "$image" /mnt/nix-ci
           sudo -n mkdir -p /mnt/nix-ci/nix /mnt/nix-ci/git-cache /mnt/nix-ci/build
           sudo -n chown "$(id -u):$(id -g)" /mnt/nix-ci/git-cache
-          sudo -n chmod 1777 /mnt/nix-ci/build
+          sudo -n chmod 0755 /mnt/nix-ci/build
           sudo -n mount --bind /mnt/nix-ci/nix /nix
           sudo -n mount --bind /mnt/nix-ci/git-cache "$XDG_CACHE_HOME"
           df -h "$RUNNER_TEMP" /nix "$XDG_CACHE_HOME"
