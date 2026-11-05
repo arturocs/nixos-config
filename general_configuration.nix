@@ -281,6 +281,7 @@
 
   environment.shellAliases = {
     update = "pushd /home/arturo/nixos-config ; nix flake update ; nh os switch -H $HOSTNAME . ; popd";
+    pulldate = "pushd /home/arturo/nixos-config ; git pull ; nh os switch -H $HOSTNAME . ; popd";
     rebuild = "pushd /home/arturo/nixos-config ; nh os switch -H $HOSTNAME . ; popd";
     edconf = "code /home/arturo/nixos-config";
     off = "poweroff";
