@@ -12,7 +12,7 @@
 #
 # Before installing Nix, the workflow creates a preallocated Btrfs image with
 # `compress=zstd:3`. Its size is the available space on the runner's temporary
-# filesystem minus 6 GiB reserved for host logs and Actions cache archives.
+# filesystem minus 6 GiB reserved for host logs and runner bookkeeping.
 # It fails early if fewer than 4 GiB remain for the image. Preallocation keeps
 # the image from growing into the host reserve; it does not add physical disk
 # capacity. Zstd level 3 provides a starting balance of compression and CPU
@@ -22,6 +22,11 @@
 # at `/nix` and `$XDG_CACHE_HOME`, while Nix builds use `/mnt/nix-ci/build`.
 # The store, Git cache, and build temporaries therefore share compressed space
 # without putting the Git cache or build temporaries in the store archive.
+# Cache actions use `/mnt/nix-ci/actions-temp` for RUNNER_TEMP; TMPDIR also
+# points there after mounting. Cache archives therefore do not consume the
+# host reserve. Archives and extracted files must fit in Btrfs simultaneously;
+# already-compressed archives benefit little from filesystem compression.
+# The job's original RUNNER_TEMP still holds result symlinks and runner files.
 # Only directory contents are cached, never the image file. Mounts remain
 # available through all action post-steps until the ephemeral runner is removed.
 # The setup requires passwordless sudo, loop devices, and Btrfs kernel support
@@ -117,10 +122,13 @@ jobs:
           sudo -n mkdir -p /mnt/nix-ci /nix "$XDG_CACHE_HOME"
           sudo -n mount -o loop,compress=zstd:3,noatime "$image" /mnt/nix-ci
           sudo -n mkdir -p /mnt/nix-ci/nix /mnt/nix-ci/git-cache /mnt/nix-ci/build
+          sudo -n mkdir -p /mnt/nix-ci/actions-temp
           sudo -n chown "$(id -u):$(id -g)" /mnt/nix-ci/git-cache
+          sudo -n chown "$(id -u):$(id -g)" /mnt/nix-ci/actions-temp
           sudo -n chmod 0755 /mnt/nix-ci/build
           sudo -n mount --bind /mnt/nix-ci/nix /nix
           sudo -n mount --bind /mnt/nix-ci/git-cache "$XDG_CACHE_HOME"
+          echo "TMPDIR=/mnt/nix-ci/actions-temp" >> "$GITHUB_ENV"
           df -h "$RUNNER_TEMP" /nix "$XDG_CACHE_HOME"
           sudo -n btrfs filesystem usage /mnt/nix-ci
 
@@ -138,6 +146,8 @@ jobs:
       - name: Restore Nix store
         id: store-cache
         uses: nix-community/cache-nix-action/restore@v7
+        env:
+          RUNNER_TEMP: /mnt/nix-ci/actions-temp
         with:
           primary-key: ${{ runner.os }}-nix-store-v1-${{ github.run_id }}-${{ github.run_attempt }}
           restore-prefixes-first-match: |
@@ -146,6 +156,8 @@ jobs:
       - name: Restore Nix Git repositories
         id: git-cache
         uses: actions/cache/restore@v5
+        env:
+          RUNNER_TEMP: /mnt/nix-ci/actions-temp
         with:
           path: ${{ env.XDG_CACHE_HOME }}/nix/gitv*
           key: ${{ runner.os }}-nix-git-v1-${{ github.run_id }}-${{ github.run_attempt }}
@@ -157,6 +169,8 @@ jobs:
 
       - name: Save updated Nix Git repositories
         uses: actions/cache/save@v5
+        env:
+          RUNNER_TEMP: /mnt/nix-ci/actions-temp
         with:
           path: ${{ env.XDG_CACHE_HOME }}/nix/gitv*
           key: ${{ steps.git-cache.outputs.cache-primary-key }}
@@ -177,6 +191,8 @@ jobs:
 
       - name: Save cleaned Nix store
         uses: nix-community/cache-nix-action/save@v7
+        env:
+          RUNNER_TEMP: /mnt/nix-ci/actions-temp
         with:
           primary-key: ${{ steps.store-cache.outputs.primary-key }}
 
