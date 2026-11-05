@@ -38,7 +38,7 @@
 # cannot remove live dependencies or guarantee that a build fits. Disk usage
 # is reported after mounting and at the end of the job, including on failure.
 #
-# `.github/scripts/update-flake-lock.mjs` evaluates the declared inputs and
+# `.github/scripts/update-flake-lock.mts` evaluates the declared inputs and
 # overrides GitHub Git URLs with snapshot URLs for a single flake update.
 # It restores Git transport in the generated lock, retaining the pinned
 # revisions, content hashes, timestamps, and original refs. An offline metadata
@@ -158,7 +158,7 @@ jobs:
             ${{ runner.os }}-nix-store-v1-
 
       - name: Update flake inputs from snapshots
-        run: node .github/scripts/update-flake-lock.mjs
+        run: node .github/scripts/update-flake-lock.mts
 
       - name: Build every NixOS configuration
         run: |

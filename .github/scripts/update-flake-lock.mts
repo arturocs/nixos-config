@@ -3,7 +3,60 @@ import { resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
-function githubRepository(url) {
+interface FlakeInput {
+  url?: string;
+  inputs?: Record<string, FlakeInput>;
+  flake?: boolean;
+  follows?: string;
+  [attribute: string]: unknown;
+}
+
+interface ReferenceMetadata {
+  rev?: string;
+  narHash?: string;
+  lastModified?: number;
+  ref?: string;
+  dir?: string;
+  [attribute: string]: unknown;
+}
+
+interface GitReference extends ReferenceMetadata {
+  type: 'git';
+  url: string;
+}
+
+interface GitHubReference extends ReferenceMetadata {
+  type: 'github';
+  owner: string;
+  repo: string;
+}
+
+interface OtherReference extends ReferenceMetadata {
+  type: 'indirect' | 'path' | 'tarball' | 'file' | 'mercurial' | 'gitlab' | 'sourcehut';
+}
+
+type FlakeReference = GitReference | GitHubReference | OtherReference;
+
+interface LockNode {
+  original?: FlakeReference;
+  locked?: FlakeReference;
+  inputs?: Record<string, string | string[]>;
+  flake?: boolean;
+}
+
+interface FlakeLock {
+  nodes: Record<string, LockNode>;
+  root: string;
+  version: number;
+}
+
+interface GitHubRepository {
+  parsed: URL;
+  owner: string;
+  repo: string;
+}
+
+function githubRepository(url: string): GitHubRepository {
   const parsed = new URL(url);
   const parts = parsed.pathname.replace(/\.git$/, '').split('/').filter(Boolean);
   if (!['git+https:', 'https:'].includes(parsed.protocol) ||
@@ -14,7 +67,7 @@ function githubRepository(url) {
   return { parsed, owner: parts[0], repo: parts[1] };
 }
 
-export function snapshotUrl(url) {
+export function snapshotUrl(url: string): string {
   const { parsed, owner, repo } = githubRepository(url);
   for (const parameter of parsed.searchParams.keys()) {
     if (!['ref', 'rev', 'dir'].includes(parameter)) {
@@ -24,7 +77,7 @@ export function snapshotUrl(url) {
   return `github:${owner}/${repo}${parsed.search}`;
 }
 
-export function restoreGitLocks(lock) {
+export function restoreGitLocks(lock: FlakeLock): FlakeLock {
   for (const node of Object.values(lock.nodes)) {
     if (node.original?.type !== 'git' || node.locked?.type !== 'github') {
       continue;
@@ -56,7 +109,7 @@ export function restoreGitLocks(lock) {
   return lock;
 }
 
-function runNix(args) {
+function runNix(args: string[]): string {
   const result = spawnSync('nix', args, {
     encoding: 'utf8',
     stdio: ['inherit', 'pipe', 'inherit'],
@@ -69,9 +122,9 @@ function runNix(args) {
   return result.stdout;
 }
 
-function main() {
-  const inputs = JSON.parse(runNix(['eval', '--json', '--file', './flake.nix', 'inputs']));
-  const overrides = [];
+function main(): void {
+  const inputs = JSON.parse(runNix(['eval', '--json', '--file', './flake.nix', 'inputs'])) as Record<string, FlakeInput>;
+  const overrides: string[] = [];
   for (const [name, input] of Object.entries(inputs)) {
     if (!input.url?.startsWith('git+https://github.com/')) continue;
     for (const attribute of Object.keys(input)) {
@@ -85,7 +138,7 @@ function main() {
   }
   const lockPath = resolve('flake.lock');
   runNix(['flake', 'update', ...overrides, '--output-lock-file', lockPath]);
-  const lock = restoreGitLocks(JSON.parse(readFileSync(lockPath, 'utf8')));
+  const lock = restoreGitLocks(JSON.parse(readFileSync(lockPath, 'utf8')) as FlakeLock);
   writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
   runNix(['flake', 'metadata', '--offline', '--no-update-lock-file', '--json']);
 }
