@@ -10,6 +10,9 @@
 # only `flake.lock` to the default branch after all builds succeed, and only
 # when the lock file changed. Failed updates or builds leave the branch unchanged.
 # This verifies builds, not booting or runtime behavior.
+# If the default branch advances during the run, the validated lock is not
+# pushed onto untested changes. A new workflow run is dispatched against the
+# latest default branch instead, including when a push loses this race.
 #
 # Before installing Nix, the workflow creates a preallocated Btrfs image with
 # `compress=zstd:3`. Its size is the available space on the runner's temporary
@@ -69,8 +72,10 @@
 # Cache keys are unique per run because Actions caches are immutable; a
 # shared restore prefix selects the most recently created cache.
 #
-# The workflow uses the built-in `GITHUB_TOKEN` with `contents: write`; no
-# additional secret is required. Repository policies must allow Actions to
+# The workflow uses the built-in `GITHUB_TOKEN` with `contents: write` and
+# `actions: write`; no additional secret is required. Actions write access
+# allows dispatching a fresh validation when the branch advances.
+# Repository policies must allow Actions to
 # push to the default branch. Branch protection requiring pull requests will
 # block this direct-commit workflow.
 #
@@ -86,6 +91,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: flake-update
@@ -182,7 +188,17 @@ jobs:
           primary-key: ${{ steps.store-cache.outputs.primary-key }}
 
       - name: Commit validated lock file
+        id: commit
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
+          validated_head="$(git rev-parse HEAD)"
+          remote_head="$(git ls-remote --exit-code origin "refs/heads/$DEFAULT_BRANCH" | cut -f1)"
+          if [[ "$remote_head" != "$validated_head" ]]; then
+            echo "::notice::The default branch advanced; restarting validation without publishing this lock."
+            echo "restart=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           if git diff --quiet -- flake.lock; then
             echo "No lock file changes."
             exit 0
@@ -191,7 +207,24 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add flake.lock
           git commit -m "chore: update flake.lock"
-          git push origin "HEAD:${{ github.event.repository.default_branch }}"
+          if git push origin "HEAD:$DEFAULT_BRANCH"; then
+            exit 0
+          fi
+          remote_head="$(git ls-remote --exit-code origin "refs/heads/$DEFAULT_BRANCH" | cut -f1)"
+          if [[ "$remote_head" != "$validated_head" ]]; then
+            echo "::notice::The default branch changed during publication; restarting validation."
+            echo "restart=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "::error::Push failed without a change to the default branch."
+          exit 1
+
+      - name: Restart validation on updated branch
+        if: steps.commit.outputs.restart == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: gh workflow run flake-update.yml --repo "$GITHUB_REPOSITORY" --ref "$DEFAULT_BRANCH"
 
       - name: Report disk usage
         if: always()
