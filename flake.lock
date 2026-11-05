@@ -16,7 +16,8 @@
         "ref": "develop",
         "rev": "50cd334ed43d8627bef4d94d116b9ed25daa40a3",
         "type": "git",
-        "url": "https://github.com/nix-community/autofirma-nix.git"
+        "url": "https://github.com/nix-community/autofirma-nix.git",
+        "revCount": 654
       },
       "original": {
         "ref": "develop",
@@ -145,7 +146,8 @@
         "ref": "release-26.05",
         "rev": "24f2190587513b9c2f73db112a17844ae912d965",
         "type": "git",
-        "url": "https://github.com/nix-community/home-manager.git"
+        "url": "https://github.com/nix-community/home-manager.git",
+        "revCount": 6842
       },
       "original": {
         "ref": "release-26.05",
@@ -181,7 +183,9 @@
         "narHash": "sha256-3FHVsncGsfcxozcQgHULGkQ6TqXOlguxX6YlBQhQrT8=",
         "rev": "07c41bfdc3b986b7e65e19380b28916e10112c0f",
         "type": "git",
-        "url": "https://github.com/thiagokokada/nix-alien.git"
+        "url": "https://github.com/thiagokokada/nix-alien.git",
+        "ref": "refs/heads/master",
+        "revCount": 429
       },
       "original": {
         "type": "git",
@@ -195,7 +199,8 @@
         "ref": "refs/tags/latest",
         "rev": "f1f045fc8b35ff59f88982c1752d3f3a42ca6a61",
         "type": "git",
-        "url": "https://github.com/gmodena/nix-flatpak.git"
+        "url": "https://github.com/gmodena/nix-flatpak.git",
+        "revCount": 123
       },
       "original": {
         "ref": "refs/tags/latest",
@@ -257,7 +262,9 @@
         "narHash": "sha256-hnApcv/55630/y7MPU7zgWYSStxj9IpnEfgxl/qpLj0=",
         "rev": "181c1c61eab79130879257550dba0b36bd6bb8c9",
         "type": "git",
-        "url": "https://github.com/snowfallorg/nix-software-center.git"
+        "url": "https://github.com/snowfallorg/nix-software-center.git",
+        "ref": "refs/heads/main",
+        "revCount": 100
       },
       "original": {
         "type": "git",
@@ -293,7 +300,9 @@
         "narHash": "sha256-nxf3EXrBDlE7cdegugVbjqt2U5ZEu+N4bSLm8BQY5KI=",
         "rev": "8189e2ea7d684a68670b4768e4dc31480d47d21d",
         "type": "git",
-        "url": "https://github.com/nix-community/nix-vscode-extensions.git"
+        "url": "https://github.com/nix-community/nix-vscode-extensions.git",
+        "ref": "refs/heads/master",
+        "revCount": 2347
       },
       "original": {
         "type": "git",
@@ -346,7 +355,8 @@
         "ref": "nixpkgs-unstable",
         "rev": "13e53762c5afaf384d4614e94527a9ccfafe41d0",
         "type": "git",
-        "url": "https://github.com/NixOS/nixpkgs.git"
+        "url": "https://github.com/NixOS/nixpkgs.git",
+        "revCount": 1108269
       },
       "original": {
         "ref": "nixpkgs-unstable",
@@ -441,7 +451,8 @@
         "ref": "nixos-26.05",
         "rev": "7dcdd87373d72e7a2173e4db02e20d3d7f495cfd",
         "type": "git",
-        "url": "https://github.com/NixOS/nixpkgs.git"
+        "url": "https://github.com/NixOS/nixpkgs.git",
+        "revCount": 1017737
       },
       "original": {
         "ref": "nixos-26.05",
@@ -461,7 +472,9 @@
         "narHash": "sha256-/XsuGeKPvENxMfLBIND2OI6o3gotmqtvFGTnmmJBOFs=",
         "rev": "864a7bd6df3347f1a25e1dc00fa120487dbe69a9",
         "type": "git",
-        "url": "https://github.com/nix-community/NUR.git"
+        "url": "https://github.com/nix-community/NUR.git",
+        "ref": "refs/heads/main",
+        "revCount": 53741
       },
       "original": {
         "type": "git",
@@ -482,7 +495,9 @@
         "narHash": "sha256-jZhZkzAwc7f3exzcTDJWP2WCAchCv0iNC3UF/QsahdQ=",
         "rev": "a19a2a029fa180911bd89c554dca1616e10f4c1d",
         "type": "git",
-        "url": "https://github.com/nix-community/plasma-manager.git"
+        "url": "https://github.com/nix-community/plasma-manager.git",
+        "ref": "refs/heads/trunk",
+        "revCount": 327
       },
       "original": {
         "type": "git",
@@ -515,7 +530,9 @@
         "narHash": "sha256-0psEeQjs1g9oWQ6eVVGlCom+X3/uHyr6jSMyHVU57u8=",
         "rev": "19e0e6c951a7a8a7d3232c64e58d26b89df44c60",
         "type": "git",
-        "url": "https://github.com/oxalica/rust-overlay.git"
+        "url": "https://github.com/oxalica/rust-overlay.git",
+        "ref": "refs/heads/master",
+        "revCount": 2358
       },
       "original": {
         "type": "git",
