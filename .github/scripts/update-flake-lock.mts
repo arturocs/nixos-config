@@ -13,6 +13,7 @@ interface FlakeInput {
 
 interface ReferenceMetadata {
   rev?: string;
+  revCount?: number;
   narHash?: string;
   lastModified?: number;
   ref?: string;
@@ -109,6 +110,66 @@ export function restoreGitLocks(lock: FlakeLock): FlakeLock {
   return lock;
 }
 
+async function githubRequest(url: URL): Promise<Response> {
+  const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
+  const response = await fetch(url, {
+    headers: {
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+    signal: AbortSignal.timeout(60_000),
+  });
+  if (!response.ok) {
+    throw new Error(`GitHub metadata request failed (${response.status}): ${url}`);
+  }
+  return response;
+}
+
+export function githubRevCount(headers: Headers): number {
+  const pagination = headers.get('link');
+  if (!pagination) return 1;
+  const last = pagination.split(',').find(link => /;\s*rel="last"/.test(link));
+  const target = last?.match(/<([^>]+)>/)?.[1];
+  if (!target) throw new Error('GitHub commit history has no last pagination link.');
+  const count = Number(new URL(target).searchParams.get('page'));
+  if (!Number.isSafeInteger(count) || count < 1) {
+    throw new Error('GitHub commit history returned an invalid revision count.');
+  }
+  return count;
+}
+
+export async function completeGitMetadata(lock: FlakeLock): Promise<FlakeLock> {
+  for (const node of Object.values(lock.nodes)) {
+    const locked = node.locked;
+    if (locked?.type !== 'git' || !locked.url.startsWith('https://github.com/')) continue;
+    const { owner, repo } = githubRepository(locked.url);
+    const repositoryUrl = new URL(`https://api.github.com/repos/${owner}/${repo}`);
+    if (locked.ref === undefined) {
+      const response = await githubRequest(repositoryUrl);
+      const repository = await response.json() as { default_branch?: string };
+      if (typeof repository.default_branch !== 'string' || !repository.default_branch) {
+        throw new Error(`GitHub returned no default branch for ${owner}/${repo}.`);
+      }
+      locked.ref = `refs/heads/${repository.default_branch}`;
+    }
+    if (locked.revCount === undefined) {
+      if (!locked.rev) throw new Error(`Git lock has no pinned revision: ${locked.url}`);
+      const commitsUrl = new URL(`${repositoryUrl}/commits`);
+      commitsUrl.searchParams.set('sha', locked.rev);
+      commitsUrl.searchParams.set('per_page', '1');
+      const response = await githubRequest(commitsUrl);
+      const commits = await response.json() as { sha: string }[];
+      if (!Array.isArray(commits) || commits.length !== 1 || commits[0]?.sha !== locked.rev) {
+        throw new Error(`GitHub history does not start at the pinned revision: ${locked.url}`);
+      }
+      locked.revCount = githubRevCount(response.headers);
+    }
+    console.log(`Git metadata for ${owner}/${repo}@${locked.rev}: ref=${locked.ref}, revCount=${locked.revCount}`);
+  }
+  return lock;
+}
+
 function runNix(args: string[]): string {
   const result = spawnSync('nix', args, {
     encoding: 'utf8',
@@ -122,10 +183,11 @@ function runNix(args: string[]): string {
   return result.stdout;
 }
 
-function main(): void {
+async function main(): Promise<void> {
   const lockPath = resolve('flake.lock');
   if (process.argv[2] === '--restore-git-locks') {
     const lock = restoreGitLocks(JSON.parse(readFileSync(lockPath, 'utf8')) as FlakeLock);
+    await completeGitMetadata(lock);
     writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
     runNix(['flake', 'metadata', '--offline', '--no-update-lock-file', '--json']);
     return;
@@ -148,5 +210,5 @@ function main(): void {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  main();
+  await main();
 }

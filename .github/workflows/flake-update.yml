@@ -52,6 +52,9 @@
 # pinned revisions, content hashes, timestamps, and original refs. Offline
 # metadata checks reject locks that would require updates. Conversion does
 # not run another flake update or re-resolve revisions.
+# At publication time, GitHub's API supplies missing default branch refs and
+# revCount from the history of each exact pinned SHA, without cloning Git.
+# API errors abort publication; existing explicit refs are preserved.
 # Unsupported Git URL options are rejected rather than silently discarded.
 # The local fetcher cache is ephemeral; Git repositories are not cached in
 # GitHub Actions. Only the Nix store is restored and saved between runs.
@@ -197,6 +200,8 @@ jobs:
           done
 
       - name: Restore Git transport in validated lock
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: node .github/scripts/update-flake-lock.mts --restore-git-locks
 
       - name: Collect unused Nix store paths
