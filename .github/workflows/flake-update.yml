@@ -46,10 +46,12 @@
 #
 # `.github/scripts/update-flake-lock.mts` evaluates the declared inputs and
 # overrides GitHub Git URLs with snapshot URLs for a single flake update.
-# It restores Git transport in the generated lock, retaining the pinned
-# revisions, content hashes, timestamps, and original refs. An offline metadata
-# check rejects locks that would require updates. Builds use this final Git
-# lock without overrides, reusing the sources downloaded from snapshots.
+# Builds use this snapshot lock without overrides, so missing input sources
+# are fetched as snapshots rather than cloned. Only after every build passes,
+# --restore-git-locks converts the lock for publication, retaining the same
+# pinned revisions, content hashes, timestamps, and original refs. Offline
+# metadata checks reject locks that would require updates. Conversion does
+# not run another flake update or re-resolve revisions.
 # Unsupported Git URL options are rejected rather than silently discarded.
 # The local fetcher cache is ephemeral; Git repositories are not cached in
 # GitHub Actions. Only the Nix store is restored and saved between runs.
@@ -193,6 +195,9 @@ jobs:
             nix build --no-update-lock-file --out-link "$RUNNER_TEMP/nixos-results/$system" --print-build-logs ".#nixosConfigurations.${system}.config.system.build.toplevel"
             echo "::endgroup::"
           done
+
+      - name: Restore Git transport in validated lock
+        run: node .github/scripts/update-flake-lock.mts --restore-git-locks
 
       - name: Collect unused Nix store paths
         run: nix store gc --option keep-derivations false --option keep-outputs false

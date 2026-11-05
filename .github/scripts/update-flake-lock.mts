@@ -123,6 +123,13 @@ function runNix(args: string[]): string {
 }
 
 function main(): void {
+  const lockPath = resolve('flake.lock');
+  if (process.argv[2] === '--restore-git-locks') {
+    const lock = restoreGitLocks(JSON.parse(readFileSync(lockPath, 'utf8')) as FlakeLock);
+    writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
+    runNix(['flake', 'metadata', '--offline', '--no-update-lock-file', '--json']);
+    return;
+  }
   const inputs = JSON.parse(runNix(['eval', '--json', '--file', './flake.nix', 'inputs'])) as Record<string, FlakeInput>;
   const overrides: string[] = [];
   for (const [name, input] of Object.entries(inputs)) {
@@ -136,10 +143,7 @@ function main(): void {
     console.log(`Using snapshot for ${name}: ${snapshot}`);
     overrides.push('--override-input', name, snapshot);
   }
-  const lockPath = resolve('flake.lock');
   runNix(['flake', 'update', ...overrides, '--output-lock-file', lockPath]);
-  const lock = restoreGitLocks(JSON.parse(readFileSync(lockPath, 'utf8')) as FlakeLock);
-  writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
   runNix(['flake', 'metadata', '--offline', '--no-update-lock-file', '--json']);
 }
 
