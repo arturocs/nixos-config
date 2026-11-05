@@ -350,11 +350,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1793706278,
-        "narHash": "sha256-CE1GD35mj//AKYuLNbQJZDelQYWzef5GBpQno9uyNP0=",
+        "lastModified": 1793735720,
+        "narHash": "sha256-smoxPKrzAhdGuFd2LLnG4m8P6IrZuW95DVyzjnlab7w=",
         "ref": "nixpkgs-unstable",
-        "rev": "ea9e3ef341e11c193537f674f821a99f9f436729",
-        "revCount": 1107593,
+        "rev": "9d3b8db48266c17be0b5f9c6360c3ecfbac3d1f5",
+        "revCount": 1107841,
         "type": "git",
         "url": "https://github.com/NixOS/nixpkgs.git"
       },
@@ -468,11 +468,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793783349,
-        "narHash": "sha256-1OewiWmZ6AO0l7aHB4uzs3e+DwoJSrwhgQoUzAKE+OI=",
+        "lastModified": 1793833312,
+        "narHash": "sha256-S08HQxWac/j8/kWi4MaDNF8MlwlL4+SdqdkREZTcUGg=",
         "ref": "refs/heads/main",
-        "rev": "518f1119c95ae632c1f65fd69c6dbb45f8d47f54",
-        "revCount": 53651,
+        "rev": "342efb53280fa8cc64dc17f46cb0d51715e8b9ae",
+        "revCount": 53699,
         "type": "git",
         "url": "https://github.com/nix-community/NUR.git"
       },
