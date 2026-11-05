@@ -14,23 +14,26 @@
 # pushed onto untested changes. A new workflow run is dispatched against the
 # latest default branch instead, including when a push loses this race.
 #
-# Before installing Nix, the workflow creates a preallocated Btrfs image with
-# `compress=zstd:3`. Its size is the available space on the runner's temporary
-# filesystem minus 6 GiB reserved for host logs and runner bookkeeping.
-# It fails early if fewer than 4 GiB remain for the image. Preallocation keeps
-# the image from growing into the host reserve; it does not add physical disk
-# capacity. Zstd level 3 provides a starting balance of compression and CPU
+# Before installing Nix, the workflow creates a sparse Btrfs image with
+# `compress=zstd:3`. Its logical size is the available space on the host
+# filesystem minus a 6 GiB budget for host logs and runner bookkeeping.
+# It fails early if fewer than 4 GiB remain for the image. Physical allocation
+# grows as data is written; this does not add capacity or reserve host space
+# against other writers. Zstd level 3 balances compression and CPU
 # cost; already-compressed data such as Git packfiles may shrink very little.
 #
 # The image is mounted at `/mnt/nix-ci`. Separate directories are bind-mounted
 # at `/nix` and `$XDG_CACHE_HOME`, while Nix builds use `/mnt/nix-ci/build`.
 # The store, fetcher cache, and build temporaries share compressed space
 # without putting the fetcher cache or build temporaries in the store archive.
-# Cache actions use `/mnt/nix-ci/actions-temp` for RUNNER_TEMP; TMPDIR also
-# points there after mounting. Cache archives therefore do not consume the
-# host reserve. Archives and extracted files must fit in Btrfs simultaneously;
+# The original RUNNER_TEMP directory is bind-mounted from Btrfs after copying
+# its existing runner files. RUNNER_* variables cannot be overridden through
+# workflow env. The image is outside that directory so it is never hidden or
+# copied into itself. TMPDIR also points inside Btrfs. Before restoring, a
+# dedicated step verifies the actual filesystems and device IDs of all paths.
+# Archives and extracted files must fit in Btrfs simultaneously;
 # already-compressed archives benefit little from filesystem compression.
-# The job's original RUNNER_TEMP still holds result symlinks and runner files.
+# RUNNER_TEMP holds result symlinks and runner files outside cached /nix.
 # Only directory contents are cached, never the image file. Mounts remain
 # available through all action post-steps until the ephemeral runner is removed.
 # The setup requires passwordless sudo, loop devices, and Btrfs kernel support
@@ -120,26 +123,29 @@ jobs:
           fi
           sudo -n apt-get update
           sudo -n apt-get install --yes --no-install-recommends btrfs-progs
-          available_bytes="$(df --output=avail -B1 "$RUNNER_TEMP" | tail -n 1)"
+          image="$(dirname "$RUNNER_TEMP")/nix-ci.btrfs"
+          available_bytes="$(df --output=avail -B1 "$(dirname "$image")" | tail -n 1)"
           image_bytes=$((available_bytes - 6 * 1024 * 1024 * 1024))
           if (( image_bytes < 4 * 1024 * 1024 * 1024 )); then
             echo "::error::Insufficient disk space for Btrfs while reserving 6 GiB for the host."
             exit 1
           fi
-          image="$RUNNER_TEMP/nix-ci.btrfs"
-          fallocate --length "$image_bytes" "$image"
+          truncate --size "$image_bytes" "$image"
           mkfs.btrfs --label nix-ci "$image"
           sudo -n mkdir -p /mnt/nix-ci /nix "$XDG_CACHE_HOME"
           sudo -n mount -o loop,compress=zstd:3,noatime "$image" /mnt/nix-ci
           sudo -n mkdir -p /mnt/nix-ci/nix /mnt/nix-ci/fetch-cache /mnt/nix-ci/build
-          sudo -n mkdir -p /mnt/nix-ci/actions-temp
+          sudo -n mkdir -p /mnt/nix-ci/runner-temp
+          sudo -n cp -a "$RUNNER_TEMP/." /mnt/nix-ci/runner-temp/
           sudo -n chown "$(id -u):$(id -g)" /mnt/nix-ci/fetch-cache
-          sudo -n chown "$(id -u):$(id -g)" /mnt/nix-ci/actions-temp
+          sudo -n chown "$(id -u):$(id -g)" /mnt/nix-ci/runner-temp
           sudo -n chmod 0755 /mnt/nix-ci/build
           sudo -n mount --bind /mnt/nix-ci/nix /nix
           sudo -n mount --bind /mnt/nix-ci/fetch-cache "$XDG_CACHE_HOME"
-          echo "TMPDIR=/mnt/nix-ci/actions-temp" >> "$GITHUB_ENV"
-          df -h "$RUNNER_TEMP" /nix "$XDG_CACHE_HOME"
+          sudo -n mount --bind /mnt/nix-ci/runner-temp "$RUNNER_TEMP"
+          echo "TMPDIR=$RUNNER_TEMP" >> "$GITHUB_ENV"
+          df -h "$(dirname "$image")" /nix "$XDG_CACHE_HOME" "$RUNNER_TEMP"
+          stat --format='Image: %s bytes logical, %b blocks of %B bytes allocated' "$image"
           sudo -n btrfs filesystem usage /mnt/nix-ci
 
       - name: Install Nix
@@ -153,11 +159,22 @@ jobs:
             keep-outputs = false
             http2 = false
 
+      - name: Verify compressed storage
+        run: |
+          filesystem_device="$(stat --format=%d /mnt/nix-ci)"
+          printf 'RUNNER_TEMP=%s\nTMPDIR=%s\n' "$RUNNER_TEMP" "$TMPDIR"
+          for path in /nix "$XDG_CACHE_HOME" "$RUNNER_TEMP" "$TMPDIR" /mnt/nix-ci/build; do
+            findmnt --target "$path" --output TARGET,SOURCE,FSTYPE,OPTIONS
+            if [[ "$(findmnt --noheadings --output FSTYPE --target "$path")" != btrfs || "$(stat --format=%d "$path")" != "$filesystem_device" ]]; then
+              echo "::error::$path is not backed by the expected Btrfs image."
+              exit 1
+            fi
+          done
+          df -h "$(dirname "$RUNNER_TEMP")" /nix "$RUNNER_TEMP"
+
       - name: Restore Nix store
         id: store-cache
         uses: nix-community/cache-nix-action/restore@v7
-        env:
-          RUNNER_TEMP: /mnt/nix-ci/actions-temp
         with:
           primary-key: ${{ runner.os }}-nix-store-v1-${{ github.run_id }}-${{ github.run_attempt }}
           restore-prefixes-first-match: |
@@ -182,8 +199,6 @@ jobs:
 
       - name: Save cleaned Nix store
         uses: nix-community/cache-nix-action/save@v7
-        env:
-          RUNNER_TEMP: /mnt/nix-ci/actions-temp
         with:
           primary-key: ${{ steps.store-cache.outputs.primary-key }}
 
@@ -229,7 +244,11 @@ jobs:
       - name: Report disk usage
         if: always()
         run: |
-          df -h "$RUNNER_TEMP"
+          df -h "$(dirname "$RUNNER_TEMP")" "$RUNNER_TEMP"
+          image="$(dirname "$RUNNER_TEMP")/nix-ci.btrfs"
+          if [[ -f "$image" ]]; then
+            stat --format='Image: %s bytes logical, %b blocks of %B bytes allocated' "$image"
+          fi
           if mountpoint -q /mnt/nix-ci; then
             sudo -n btrfs filesystem usage /mnt/nix-ci
           fi
