@@ -3,9 +3,9 @@
     # DuckStation
     (appimageTools.wrapType2 rec {
       pname = "duckstation";
-      version = "latest";
+      version = "v0.1-12442";
       src = fetchurl {
-        url = "https://github.com/stenzek/duckstation/releases/download/latest/DuckStation-x64.AppImage";
+        url = "https://github.com/stenzek/duckstation/releases/download/v0.1-12442/DuckStation-x64.AppImage";
         hash = "sha256-TVw9z9mTfcnne4/NX4ebjsDGlVHV7RNGJZIHNghUL8o=";
       };
       extraPkgs = pkgs: [pkgs.libgpg-error];
