@@ -55,6 +55,7 @@
     ocrmypdf
     distrobox
     inputs.nix-alien.packages.${pkgs.stdenv.hostPlatform.system}.nix-alien
+    dwarfs
 
     # Multimedia
     gimp

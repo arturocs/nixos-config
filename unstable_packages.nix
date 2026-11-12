@@ -72,7 +72,6 @@
 
     # Other packages
     hydralauncher
-    dwarfs
     unsloth-desktop
   ];
 }
