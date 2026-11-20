@@ -468,13 +468,13 @@
         ]
       },
       "locked": {
-        "lastModified": 1795166302,
-        "narHash": "sha256-YAthvAiMB1Yw9jg4QUqUM90h5laPWDAe+Y0AifCJnss=",
-        "rev": "6c734be2cefd32c4c7c9072260f361b3def0ddb3",
+        "lastModified": 1795174907,
+        "narHash": "sha256-hVuOK9vNElPPQH+wreTA0FLbj546KL0dyewdQEivJMQ=",
+        "rev": "41b5c592b948a02c5716ecf11a2271a43f5a3925",
         "type": "git",
         "url": "https://github.com/nix-community/NUR.git",
         "ref": "refs/heads/main",
-        "revCount": 54877
+        "revCount": 54888
       },
       "original": {
         "type": "git",
@@ -526,13 +526,13 @@
         ]
       },
       "locked": {
-        "lastModified": 1795082704,
-        "narHash": "sha256-YK+6Nl8oR2Fhh3YO3DhBNCN7TmIGWw3tLhk25kfiWw4=",
-        "rev": "85d4adbbd952fcaf89fed3cb4ba540a4770d6e64",
+        "lastModified": 1795168384,
+        "narHash": "sha256-aQ4Ns5O78Pg6B1i2hNRbI1HpRtnZst/jW34MSOOeaX4=",
+        "rev": "a5c999945da3991d7aa3cc2a6075cfd22bd387e9",
         "type": "git",
         "url": "https://github.com/oxalica/rust-overlay.git",
         "ref": "refs/heads/master",
-        "revCount": 2373
+        "revCount": 2374
       },
       "original": {
         "type": "git",
