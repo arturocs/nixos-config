@@ -238,7 +238,6 @@
   services.flatpak.update.auto.enable = true;
   services.flatpak.uninstallUnmanaged = true;
   services.flatpak.packages = [
-    "com.github.afrantzis.Bless"
     "com.github.tchx84.Flatseal"
     "org.frozen_bubble.frozen-bubble"
   ];

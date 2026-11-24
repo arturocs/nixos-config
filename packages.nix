@@ -81,6 +81,7 @@
     kdePackages.filelight
     kdePackages.kalk
     kdePackages.kfind
+    okteta
 
     # Open source games
     pingus
