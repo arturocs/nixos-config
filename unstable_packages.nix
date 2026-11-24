@@ -73,5 +73,6 @@
     # Other packages
     hydralauncher
     unsloth-desktop
+    heroic
   ];
 }
