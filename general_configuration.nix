@@ -240,7 +240,6 @@
   services.flatpak.packages = [
     "com.github.afrantzis.Bless"
     "com.github.tchx84.Flatseal"
-    "com.stremio.Stremio"
     "org.frozen_bubble.frozen-bubble"
   ];
   services.lvm.enable = false;

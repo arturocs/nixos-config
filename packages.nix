@@ -63,6 +63,7 @@
     vlc
     blender
     obs-studio
+    stremio-linux-shell
 
     # Internet
     telegram-desktop
