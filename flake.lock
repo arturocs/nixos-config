@@ -296,13 +296,13 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1795511924,
-        "narHash": "sha256-qV1tHChWK6j+AwznYsYPWMbqbUbD5HT33WX1FWa6kQs=",
-        "rev": "19b08a92e904f2e6da2ca7565bdb26dbd9286faa",
+        "lastModified": 1795593260,
+        "narHash": "sha256-GVOIipCTl33b8GMZY8MJHiBcGmyLLpwY+zbs7jjMWFw=",
+        "rev": "93dd69e74a0787e0e7cd17ef20b79204919ccc5b",
         "type": "git",
         "url": "https://github.com/nix-community/nix-vscode-extensions.git",
         "ref": "refs/heads/master",
-        "revCount": 2369
+        "revCount": 2370
       },
       "original": {
         "type": "git",
@@ -468,13 +468,13 @@
         ]
       },
       "locked": {
-        "lastModified": 1795527295,
-        "narHash": "sha256-xdtZEozceWsarsQYxFneS2nhPgIq7w5NtSq4DIIem+Q=",
-        "rev": "be663c7b8f97ba7997d88e984c40e2e73a69051a",
+        "lastModified": 1795599768,
+        "narHash": "sha256-G1T2Xj+FdFWf34k8++6sD3G1QzQPfcclmUIet+J4bH0=",
+        "rev": "92de74b7745a7edc02f5ef613c1ea3498299e010",
         "type": "git",
         "url": "https://github.com/nix-community/NUR.git",
         "ref": "refs/heads/main",
-        "revCount": 55257
+        "revCount": 55332
       },
       "original": {
         "type": "git",
