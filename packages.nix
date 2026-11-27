@@ -59,6 +59,7 @@
 
     # Multimedia
     gimp
+    krita
     calibre
     vlc
     blender
