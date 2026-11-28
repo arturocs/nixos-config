@@ -241,6 +241,7 @@
   services.flatpak.packages = [
     "com.github.tchx84.Flatseal"
     "org.frozen_bubble.frozen-bubble"
+    "org.duckstation.DuckStation"
   ];
   services.lvm.enable = false;
 

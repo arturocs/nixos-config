@@ -1,26 +1,26 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    # DuckStation
-    (appimageTools.wrapType2 rec {
-      pname = "duckstation";
-      version = "v0.1-12442";
-      src = fetchurl {
-        url = "https://github.com/stenzek/duckstation/releases/download/v0.1-12442/DuckStation-x64.AppImage";
-        hash = "sha256-TVw9z9mTfcnne4/NX4ebjsDGlVHV7RNGJZIHNghUL8o=";
-      };
-      extraPkgs = pkgs: [pkgs.libgpg-error];
-      extraInstallCommands = let
-        appimageContents = appimageTools.extract {inherit pname version src;};
-      in ''
-        install -Dm644 ${appimageContents}/org.duckstation.DuckStation.desktop \
-          $out/share/applications/org.duckstation.DuckStation.desktop
-        substituteInPlace $out/share/applications/org.duckstation.DuckStation.desktop \
-          --replace-fail 'duckstation-qt' "$out/bin/duckstation"
-        install -Dm644 ${appimageContents}/org.duckstation.DuckStation.png \
-          $out/share/pixmaps/org.duckstation.DuckStation.png
-      '';
-      meta.mainProgram = "duckstation";
-    })
+    # # DuckStation
+    # (appimageTools.wrapType2 rec {
+    #   pname = "duckstation";
+    #   version = "v0.1-12442";
+    #   src = fetchurl {
+    #     url = "https://github.com/stenzek/duckstation/releases/download/v0.1-12442/DuckStation-x64.AppImage";
+    #     hash = "sha256-TVw9z9mTfcnne4/NX4ebjsDGlVHV7RNGJZIHNghUL8o=";
+    #   };
+    #   extraPkgs = pkgs: [pkgs.libgpg-error];
+    #   extraInstallCommands = let
+    #     appimageContents = appimageTools.extract {inherit pname version src;};
+    #   in ''
+    #     install -Dm644 ${appimageContents}/org.duckstation.DuckStation.desktop \
+    #       $out/share/applications/org.duckstation.DuckStation.desktop
+    #     substituteInPlace $out/share/applications/org.duckstation.DuckStation.desktop \
+    #       --replace-fail 'duckstation-qt' "$out/bin/duckstation"
+    #     install -Dm644 ${appimageContents}/org.duckstation.DuckStation.png \
+    #       $out/share/pixmaps/org.duckstation.DuckStation.png
+    #   '';
+    #   meta.mainProgram = "duckstation";
+    # })
 
     # ES-DE
     (appimageTools.wrapType2 rec {
